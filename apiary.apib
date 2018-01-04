@@ -1,0 +1,1137 @@
+vFORMAT: 1A
+HOST: http://leschaco.apiblueprint.org/
+
+# Leschaco
+
+API que contendrá todas las operaciones necesarias para permitir el correcto funcionamiento de la aplicación web y móvil de
+LESCHACO
+
+## Authentication [/api/v1]
+
+Contiene los métodos para autenticar al usuario y que pueda hacer uso de la API por medio de un token de sesión
+
+------
+
+### Login [POST /api/v1/login]
+
++ Request
+
+    + Headers
+            
+            Content-Type: application/json
+            client_id: "2"
+    
+    + Body
+    
+            {
+                "email": "test@test.com.mx",
+                "password": "test$asd"
+            }
+        
++ Response 200 (application/json)
+
+            {
+                "success": true,
+                "benchmark": "2.97MB",
+                "data": {
+                    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijg4NzBhMmRkNDIzZGQ1ZTJlMzAwYzVjNjdhN2NjM2FiYjdkMDk1Yzk3NTg5Nzc5N2VjNjEwOTJlYmFlZDNjNjczNGU3MDkwYzhmMDgwMjE0In0.eyJhdWQiOiIyIiwianRpIjoiODg3MGEyZGQ0MjNkZDVlMmUzMDBjNWM2N2E3Y2MzYWJiN2QwOTVjOTc1ODk3Nzk3ZWM2MTA5MmViYWVkM2M2NzM0ZTcwOTBjOGYwODAyMTQiLCJpYXQiOjE1MTUwMjk0ODIsIm5iZiI6MTUxNTAyOTQ4MiwiZXhwIjoxNTE2MzI1NDgyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.R02e1mWR_dAgrbVQMsyGe2-LFuigBjyI6rGgZWUDafoL1_-LwULO_Ft2lnjtkIKUp4JViOeELunN3p6rzzKekAoW0X1XHOFimxWNWWkUMg5vjpkKRPmx6qYyuD0v8nzZFspaeZjrmIYdhaPmuVHtV4mZr3eNyMcNmhq9ML-C_ZVQOjT8q-MxyjB9QDHxDHlOWStqOxtygsSAmWtQC0toovIQxXXcJVoH2dbDBf7gUziyKK7-3KvRTZTEEb1tX1B3fivAQOHHCQ8-aZczF1SP34Z4R8A9f4DaHolYKeRBr9-AkFGHBjOyTh3ea8jd9aLNXg7pt3ITLrgS4qxBVRMv-n3afVoLpuoCrtBdnNj0pwxMWlqNSNiHXJX_evXO7fZLLLB7e-ORD1zY4dGjGihquY5HQJ4LJf0GLLnRtkroaCtylKDlhd4182kSXFKCbuJPJkwEZeBff6oZPpbj2HpbgQUgDwJdeuyjCCYHwoeNKmE2KASu-_W8sTwRcFrM6frEMbuflyK-CViA0zWrcx6lX__rm0Eoh-quAukr8nDMvD2fPb3wpKlbC7RmRji8dabrnVtm2oP6onTpWzZaiSgTLI6fO6q4c13UT5wBXDLNGQRFiB6ajUFNYFjZWXqY14G20fQPJOQZYd63qb74tP3osfZjGEbbrBIu6J5r8igzGrc",
+                    "expires_in": 1296000,
+                    "refresh_token": "def502002508434f91d58cdd4e24c90ef43f7b8558ea460a090bb2f480ca7a74cc6a95f483a5010930c7020a5c710158cc4fb9ce66253167b9cec6d984e606a3d9bec943a3ab5e7e59795625d984f1df2ae44c2f599865846d2ac8dd424c6492e9d4a002d9d3cf76aed6341eb8eaf7552be3df2947d967da7ed182d9549b3b7af93a0b2ce72da53bec774ec447de0f3abf6d166079d64c88aefc289a5875ae59760ec8e2ef315c41130a8ce16849663cb76fce3185a09b676f9c4fd966f0fe2e264a16e0b16aa9dbda7cc9f3518835e4e121f103e84919ab7a9e61dc891cfaa20e287225689ac982b269a8488120642b6b2d6310f9c3f8b3ae183cc9312a17ae54777dfb198302b06fb88874bc8fc3fdd70b211332d9d8b3948ac2f436863b07812bf3c9818b42f806e7934f0fd51267a68692024dcfd30a9355a8ddb8f9404aa7943a27b607e1840708a31513b5fff51549526f2472e07fa3cee9e2eff0892811"
+                },
+                "status": {
+                    "code": "+A3.0",
+                    "message": "Session created/started"
+                }
+            }
+        
++ Response 500 (application/json)
+
+        {
+            "token": null,
+            "success": false,
+            "status": {
+                    "code": "-A1.0",
+                    "message": "Error message",
+                    "success": false
+            }
+        }
+        
+### Logout [GET /api/v1/logout]
+
++ Request
+
+    + Headers
+            
+            Content-Type: application/json
+            Authorization: "Bearer token"
+
++ Response 200 (application/json)
+
+        {
+            "success": true
+        }
+
+## Privileges [/api/v1/privileges]
+
+Obtiene el listado de permisos
+
+------
+
+        
+### Get menu [GET /api/v1/privileges]
++ Request (application/json)
+
+    + Headers
+    
+            client_id : "browserapp"
+            client_secret : 123456
+            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+
++ Response 200 (application/json)
+
+        {
+            "permissions":[
+                    {
+                        "id" : 1
+                        "name" : "Crear",
+                        "system_name": "crear",
+                    },
+                    {
+                        "id" : 2
+                        "name" : "Editar",
+                        "system_name": "editar",
+                    },
+            
+                ],
+            "status": {
+                    "code": "+A1.0",
+                    "message": "Raw message",
+                    "success": true
+                }
+        }
+
+## Menu [/api/v1/menu]
+
+Obtiene el menu principal de la sección de contenidos, para lo cual se deben obtener los tipos de contenidos 
+
+------
+
+        
+### Get menu [GET /api/v1/menu]
++ Request (application/json)
+
+    + Headers
+    
+            client_id : "browserapp"
+            client_secret : 123456
+            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+
++ Response 200 (application/json)
+
+        {
+            "menu":[
+                    {
+                        "content_type" : "Nombre del Módulo 1",
+                        "system_name": "nombre_sistema",
+                    },
+                    {
+                        "content_type" : "Nombre del Módulo 2",
+                        "system_name": "nombre_sistema",
+                    },
+                    {
+                        "content_type" : "Nombre del Módulo 3",
+                        "system_name": "nombre_sistema",
+                    },
+            
+                ],
+            "status": {
+                    "code": "+A1.0",
+                    "message": "Raw message",
+                    "success": true
+                }
+        }
+
+
+## Users [/api/v1/users]
+
+------
+
+
+### Create [POST /api/v1/users]
+
++ Request (application/json)
+
+    + Headers
+    
+            client_id : "browserapp"
+            client_secret : 123456
+            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+            
+    + Body
+    
+            {
+                "username": "Username",
+                "password": "test$Pass",
+                "detail": {"name": "Test name","lastname": "Test lastname","phone": "5545678912","email": "test@test.com"},
+                "roles": [1,2,3]
+            }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "user":{
+                    "username": "Username",
+                    "password": "test$Pass",
+                    "detail": {
+                        "name": "Test name",
+                        "lastname": "Test lastname",
+                        "phone": "5545678912",
+                        "email": "test@test.com"
+                    },
+                    "roles": [1,2,3],
+                    "published_at": "2015-08-05T08:40:51.620Z"
+                },
+                "status": {
+                    "code": "+A1.0",
+                    "message": "El usuario se guardó con éxito.",
+                    "success": true
+                }
+            }
+
+### Get by ID [GET /api/v1/users/{id}]
+
++ Request (application/json)
+
+    + Headers
+    
+            client_id : "browserapp"
+            client_secret : 123456,
+            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+
+
++ Response 200 (application/json)
+
+        {
+         "user":{
+            "id":1,
+            "username": "Username",
+            "password": "test$Pass",
+            "detail": { "name": "Test name","lastname": "Test lastname","phone": "5545678912","email": "test@test.com"},
+            "roles": [1,2,3],
+            "published_at": "2015-08-05T08:40:51.620Z",
+            "status": 0
+            },
+            "status": {
+                "code": "+A1.0",
+                "message": "Raw Message",
+                "success": true
+                }
+        }
+        
+### Get all [GET /api/v1/users]
+
++ Request (application/json)
+
+    + Headers
+    
+            client_id : "browserapp"
+            client_secret : 123456
+            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+            
+    + Body
+            
++ Response 200 (application/json)
+
+        {
+            "users":[
+                {
+                    "id": 1,
+                    "username": "Username","password": "test$Pass",
+                    "detail": {"name": "Test name","lastname": "Test lastname","phone": "5545678912","email": "test@test.com"},
+                    "roles": [{ "id":1, "name": "Administrador"},{ "id":2, "name": "Editor"}],
+                    "published_at": "2015-08-05T08:40:51.620Z",
+                    "status": 1,
+                    "deleted": 0
+                },
+                {
+                    "id": 2,
+                    "username": "Username","password": "test$Pass",
+                    "detail": {"name": "Test name 2","lastname": "Test lastname 2","phone": "5545678912","email": "test2@test.com"},
+                    "roles": [{ "id":2, "name": "Editor"}],
+                    "published_at": "2015-08-05T08:40:51.620Z",
+                    "status": 0,
+                    "deleted": 0
+                }
+            ],
+            "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+        }
+        
+### Update [PUT /api/v1/users]
+
++ Request (application/json)
+
+    + Headers
+    
+            client_id : "browserapp"
+            client_secret : 123456
+            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+            
+    + Body
+    
+            {
+                "id":1,
+                "username": "Username",
+                "password": "test$Pass",
+                "detail": {
+                    "name": "Test name",
+                    "lastname": "Test lastname",
+                    "phone": "5545678912",
+                    "email": "test@test.com",
+                },
+                "roles": [1,2,3]
+            }
+
++ Response 200 (application/json)
+
+    + Body
+    
+        {
+            "user":{
+                "username": "Username",
+                "password": "test$Pass",
+                "detail": {"name": "Test name","lastname": "Test lastname","phone": "5545678912","email": "test@test.com"},
+                "roles": [1,2,3],
+                "published_at": "2015-08-05T08:40:51.620Z"
+            },
+            "status": {
+                "code": "+A1.0",
+                "message": "Raw Message",
+                "success": true
+            }
+        }
+            
+### Delete [DELETE /api/v1/users/{id}]
+
++ Request (application/json)
+
+    + Headers
+    
+            client_id : "browserapp"
+            client_secret : 123456
+            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+
+## Roles [/api/v1/roles]
+
+------
+
+
+### Create [POST /api/v1/roles]
+
++ Request (application/json)
+
+    + Headers
+    
+            client_id : "browserapp"
+            client_secret : 123456
+            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+            
+    + Body
+    
+            {
+                "name": "Test user role",
+                "description": "description",
+                "permissions": [
+                    {
+                        "content_type": 1,
+                        "permission": [1,2,3,4]
+                    },
+                    {
+                        "content_type": 12,
+                        "permission": [1,2,3]
+                    },
+                    {
+                        "content_type": 3,
+                        "permission": [1,3]
+                    }
+                ]
+            }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "role":{
+                    "id": 1,
+                    "name": "Test user role",
+                    "description": "description",
+                    "permissions": [
+                        {
+                            "content_type": 1,
+                            "permission": [1,2,3,4]
+                        },
+                        {
+                            "content_type": 12,
+                            "permission": [1,2,3]
+                        },
+                        {
+                            "content_type": 3,
+                            "permission": [1,3]
+                        }
+                    ],
+                    "published_at": "2015-08-05T08:40:51.620Z"
+                },
+                "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+
+### Get by ID [GET /api/v1/roles/{id}]
+
++ Request (application/json)
+
+    + Headers
+    
+            client_id : "browserapp"
+            client_secret : 123456,
+            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+
+
++ Response 200 (application/json)
+
+        {
+            "role":{
+                    "id": 1,
+                    "name": "Test user name",
+                    "description":"description",
+                    "permissions": [
+                        {
+                            "content_type": 1,
+                            "permission": [1,2,3,4]
+                        },
+                        {
+                            "content_type": 12,
+                            "permission": [1,2,3]
+                        },
+                        {
+                            "content_type": 3,
+                            "permission": [1,3]
+                        }
+                    ],
+                    "published_at": "2015-08-05T08:40:51.620Z"
+                },
+            "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+        }
+        
+### Get all [GET /api/v1/roles]
+
++ Request (application/json)
+
+    + Headers
+    
+            client_id : "browserapp"
+            client_secret : 123456
+            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+            
+    + Body
+            
++ Response 200 (application/json)
+
+        {
+            "roles":[
+                {"id": 1,"name": "Administrador","description":"description","status": 1,"published_at": "2015-08-05T08:40:51.620Z"},
+                {"id": 2,"name": "Editor0","description":"description","status": 1,"published_at": "2015-08-05T08:40:51.620Z"},
+                {"id": 3,"name": "Editor1","description":"description","status": 1,"published_at": "2015-08-05T08:40:51.620Z"},
+                {"id": 4,"name": "Editor2","description":"description","status": 1,"published_at": "2015-08-05T08:40:51.620Z"}
+                ],
+            "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+        }
+        
+### Update [PUT/PATCH /api/v1/roles/{id}]
+
++ Request (application/json)
+
+    + Headers
+    
+            client_id : "browserapp"
+            client_secret : 123456
+            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+            
+    + Body
+    
+            {
+                "name": "Test user name",
+                "description":"description",
+                "permissions": [
+                    {
+                        "content_type": 1,
+                        "permission": [1,2,3,4]
+                    },
+                    {
+                        "content_type": 12,
+                        "permission": [1,2,3]
+                    },
+                    {
+                        "content_type": 3,
+                        "permission": [1,3]
+                    }
+                ]
+            }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {   
+                "role":{
+                    "id": 1,
+                    "name": "Test user name",
+                    "description":"description",
+                    "permissions": [
+                        {
+                            "content_type": 1,
+                            "permission": [1,2,3,4]
+                        },
+                        {
+                            "content_type": 12,
+                            "permission": [1,2,3]
+                        },
+                        {
+                            "content_type": 3,
+                            "permission": [1,3]
+                        }
+                    ],
+                    "published_at": "2015-08-05T08:40:51.620Z"
+                },
+                "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+            
+### Delete [DELETE /api/v1/roles/{id}]
+
++ Request (application/json)
+
+    + Headers
+    
+            client_id : "browserapp"
+            client_secret : 123456
+            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+
+## Content models [/api/v1/contentModel]
+
+------
+
+### Create [POST /api/v1/contentModel]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+            
+    + Body
+            
+            {
+                "name": "test",
+                "system_name": "test",
+                "order": 0
+            }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "benchmark": "2.64MB",
+                "data": {
+                    "id": 130,
+                    "system_user_id": 1,
+                    "name": "test",
+                    "system_name": "test",
+                    "description": null,
+                    "order": 0,
+                    "created_at": "2018-01-03 19:37:44",
+                    "updated_at": "2018-01-03 19:37:44"
+                },
+                "status": {
+                    "code": "+A13.0",
+                    "message": "Model has been created"
+                }
+            }
+
+### Update by id [PUT /api/v1/contentModel/{id}]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+            
+    + Body
+    
+            {
+                "id": 1,
+                "name": "test",
+                "system_name": "test",
+                "order": 1
+            }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "benchmark": "2.64MB",
+                "data": {
+                    "id": 130,
+                    "system_user_id": 1,
+                    "name": "test",
+                    "system_name": "test",
+                    "description": null,
+                    "order": 0,
+                    "created_at": "2018-01-03 19:37:44",
+                    "updated_at": "2018-01-03 19:37:44"
+                },
+                "status": {
+                    "code": "+A18.0",
+                    "message": "Content model has been modified"
+                }
+            }
+
+### Get all [GET /api/v1/contentModel]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "benchmark": "2.64MB",
+                "data": {
+                    "total": 1,
+                    "records": [
+                        {
+                            "id": 130,
+                            "system_user_id": 1,
+                            "name": "testx",
+                            "system_name": "testx",
+                            "description": null,
+                            "order": 1,
+                            "created_at": "2018-01-03 19:37:44",
+                            "updated_at": "2018-01-03 19:41:03"
+                        }
+                    ]
+                },
+                "status": {
+                    "code": "+A14.0",
+                    "message": "Get all models"
+                }
+            }
+
+### Get by ID [GET /api/v1/contentModel/{id}]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "benchmark": "2.41MB",
+                "data": {
+                    "id": 130,
+                    "system_user_id": 1,
+                    "name": "testx",
+                    "system_name": "testx",
+                    "description": null,
+                    "order": 1,
+                    "status": 1,
+                    "created_at": "2018-01-03 19:37:44",
+                    "updated_at": "2018-01-03 19:41:03"
+                },
+                "status": {
+                    "code": "+A17.0",
+                    "message": "Get content model by id"
+                }
+            }
+
+### Delete [DELETE /api/v1/contentModel/{id}]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "benchmark": "2.39MB",
+                "status": {
+                    "code": "+A16.0",
+                    "message": "Content model deleted"
+                }
+            }
+
+## Field types [/api/v1/field/type]
+
+------
+
+### Create [POST /api/v1/field/type]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+
+### Update by id [PUT /api/v1/field/type/{id}]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+
+### Get all [GET /api/v1/field/type]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+
+### Get by ID [GET /api/v1/field/type/{id}]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+
+### Delete [DELETE /api/v1/field/type/{id}]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+            
+## Fields by content type [/api/v1/content-type/{system_name}/field]
+
+------
+
+### Create [POST /api/v1/content-type/{system_name}/field]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+
+### Update by id [PUT /api/v1/content-type/{system_name}/field/{id}]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+
+### Get all [GET /api/v1/content-type/{system_name}/field]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+
+### Get by ID [GET /api/v1/content-type/{system_name}/field/{id}]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+
+### Delete [DELETE /api/v1/content-type/{system_name}/field/{id}]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+            
+
+## Content [/api/v1/content]
+
+------
+
+### Create [POST /api/v1/content]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+            
+    + Body
+    
+            {
+                "content_model_id": 1,
+                "fields":[
+                    {
+                        "content_model_field_has_id": 1,
+                        "value": "value field 1"
+                    },
+                    {
+                        "content_model_field_has_id": 2,
+                        "value": "value field 2"
+                    },
+                ]
+                
+            }
+
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "benchmark": "2.39MB",
+                "data": {
+                    "id": 38,
+                    "system_user_id": 1,
+                    "content_model_id": 131,
+                    "created_at": "2018-01-03 19:51:31",
+                    "updated_at": "2018-01-03 19:51:31",
+                    "values": [
+                        {
+                            "id": 33,
+                            "content_id": 38,
+                            "value": "5a4d88a3c223f",
+                            "content_model_field_has_content_model_id": 775,
+                            "created_at": "2018-01-03 19:51:31",
+                            "updated_at": "2018-01-03 19:51:31"
+                        }
+                    ]
+                },
+                "status": {
+                    "code": "+A24.0",
+                    "message": "Content created"
+                }
+            }
+
+### Update by id [PUT /api/v1/content/{id}]
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+            
+    + Body
+    
+            {
+                "content_model_id": 1,
+                "fields":[
+                    {
+                        "content_model_field_has_id": 1,
+                        "value": "value field 1"
+                    },
+                    {
+                        "content_model_field_has_id": 2,
+                        "value": "value field 2"
+                    },
+                ]
+                
+            }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "benchmark": "2.39MB",
+                "data": {
+                    "id": 38,
+                    "system_user_id": 1,
+                    "content_model_id": 131,
+                    "created_at": "2018-01-03 19:51:31",
+                    "updated_at": "2018-01-03 19:51:31",
+                    "values": [
+                        {
+                            "id": 33,
+                            "content_id": 38,
+                            "value": "5a4d88a3c223f",
+                            "content_model_field_has_content_model_id": 775,
+                            "created_at": "2018-01-03 19:51:31",
+                            "updated_at": "2018-01-03 19:51:31"
+                        }
+                    ]
+                },
+                "status": {
+                    "code": "+A27.0",
+                    "message": "Content has been modified"
+                }
+            }
+            
+
+### Get all by content type [GET /api/v1/content]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+            
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "data": {
+                    "total": 1,
+                    "records": [
+                        {
+                            "id": 42,
+                            "system_user_id": 1,
+                            "content_model_id": 135,
+                            "created_at": "2018-01-03 19:59:04",
+                            "updated_at": "2018-01-03 19:59:04"
+                        }
+                    ]
+                },
+                "status": {
+                    "code": "+A28.0",
+                    "message": "Get all content"
+                }
+            }
+
+### Get by ID [GET /api/v1/content/{id}]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "data": {
+                    "id": 43,
+                    "system_user_id": 1,
+                    "content_model_id": 136,
+                    "created_at": "2018-01-03 20:00:32",
+                    "updated_at": "2018-01-03 20:00:32",
+                    "model": {
+                        "id": 136,
+                        "system_user_id": 1,
+                        "name": "Thurman Lind",
+                        "system_name": "thurman-lind",
+                        "description": "Veniam omnis repellat.",
+                        "order": 2,
+                        "created_at": "2018-01-03 20:00:31",
+                        "updated_at": "2018-01-03 20:00:31",
+                        "metadata": [
+                            {
+                                "id": 41,
+                                "field_metadata_id": 61,
+                                "value": "Itaque perspiciatis.",
+                                "content_model_field_has_content_model_id": 815,
+                                "created_at": "2018-01-03 20:00:32",
+                                "updated_at": "2018-01-03 20:00:32",
+                                "name": "Kara Fadel",
+                                "system_name": "kara-fadel"
+                            },
+                            {
+                                "id": 43,
+                                "field_metadata_id": 64,
+                                "value": "Ratione ducimus.",
+                                "content_model_field_has_content_model_id": 816,
+                                "created_at": "2018-01-03 20:00:32",
+                                "updated_at": "2018-01-03 20:00:32",
+                                "name": "Mrs. Tiana Reilly",
+                                "system_name": "mrs-tiana-reilly"
+                            },
+                            {
+                                "id": 45,
+                                "field_metadata_id": 67,
+                                "value": "In harum cum.",
+                                "content_model_field_has_content_model_id": 817,
+                                "created_at": "2018-01-03 20:00:32",
+                                "updated_at": "2018-01-03 20:00:32",
+                                "name": "Prof. Albertha Spinka",
+                                "system_name": "prof-albertha-spinka"
+                            }
+                        ]
+                    },
+                    "values": [
+                        {
+                            "id": 37,
+                            "content_id": 43,
+                            "value": "5a4d8ac00230b",
+                            "content_model_field_has_content_model_id": 815,
+                            "created_at": "2018-01-03 20:00:32",
+                            "updated_at": "2018-01-03 20:00:32"
+                        }
+                    ]
+                },
+                "status": {
+                    "code": "+A26.0",
+                    "message": "Get content by id"
+                }
+            }
+
+### Delete [DELETE /api/v1/conten/{id}]
+
+    + Headers
+    
+            Authorization: "Bearer token"
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
+            }
+
++ Response 500 (application/json)
+
+    + Body
+    
+            {
+               "status": {
+                    "code": "+A25.0",
+                    "message": "Content deleted"
+                }
+            }
