@@ -443,13 +443,12 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
             "benchmark": "2.64MB",
             "data": {
                     "id": 1,
-                    "name": "Test user name",
+                    "name": "Test role name",
                     "description":"description",
                     "status": 1,
                     "permissions": [
                         {
-                            "content_type": 1,
-                            "permission": [1,2,3,4]
+                            "permission": [1,2,3,]
                         },
                         {
                             "content_type": 12,
@@ -627,7 +626,7 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
                 }
             }
 
-### Update by id [PUT /api/v1/contentModel]
+### Update by id [PUT /api/v1/contentModel/{id}]
 
 + Request (application/json)
 
@@ -638,7 +637,6 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
     + Body
     
             {
-                "id": 1,
                 "name": "test",
                 "system_name": "test",
                 "order": 1
@@ -765,6 +763,240 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
                     "message": "Content model deleted"
                 }
             }
+
+## Content models field [/api/v1/contentModel/{id}/field]
+
+----
+
+### Create [POST /api/v1/contentModel/{id}/field]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+            
+    + Body
+    
+            {
+                "field_type_id": 1,
+                "name": "test",
+                "system_name": "test",
+                "order": 1,
+                "show_in_list": true
+            }
+        
++ Response 201 (application/json)
+
+    + Body
+            {
+                "success": true,
+                "data": {
+                    "id": 2,
+                    "name": "Blaze Reilly",
+                    "system_name": "blaze-reilly",
+                    "field_type_id": 7,
+                    "created_at": "2018-01-05 10:04:26",
+                    "updated_at": "2018-01-05 10:04:26",
+                    "content_model_field_has_id": 2,
+                    "order": 1,
+                    "show_in_list": 1,
+                    "content_model_id": 2
+                },
+                "status": {
+                    "code": "+A19.0",
+                    "message": "Model field has been created"
+                }
+            }
+
+### Delete [DELETE /api/v1/contentModel/{id}/field/{idField}]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "status": {
+                    "code": "+A21.0",
+                    "message": "Model field deleted"
+                }
+            }
+
+### Get by ID [GET /api/v1/contentModel/{id}/field/{idField}]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "data": {
+                    "id": 13,
+                    "name": "Demond Nolan I",
+                    "system_name": "demond-nolan-i",
+                    "field_type_id": 4,
+                    "created_at": "2018-01-05 10:10:22",
+                    "updated_at": "2018-01-05 10:10:22",
+                    "content_model_field_has_id": 13,
+                    "order": 7,
+                    "show_in_list": 0,
+                    "content_model_id": 4,
+                    "type": {
+                        "id": 4,
+                        "name": "Campo de texto largo",
+                        "system_name": "textarea",
+                        "description": "Campo de texto largo",
+                        "created_at": "2018-01-04 18:31:17",
+                        "updated_at": "2018-01-04 18:31:17"
+                    }
+                },
+                "status": {
+                    "code": "+A1.0",
+                    "message": "Get model field by id"
+                }
+            }
+            
+### Get all [GET /api/v1/contentModel/{id}/field]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "data": {
+                    "total": 10,
+                    "records": [
+                            {
+                            "id": 23,
+                            "name": "Micah Langosh",
+                            "system_name": "micah-langosh",
+                            "field_type_id": 9,
+                            "created_at": "2018-01-05 10:12:17",
+                            "updated_at": "2018-01-05 10:12:17",
+                            "content_model_field_has_id": 23,
+                            "order": 1,
+                            "show_in_list": 1,
+                            "content_model_id": 5,
+                            "type": {
+                                "id": 9,
+                                "name": "Etiqueta",
+                                "system_name": "label",
+                                "description": "Etiqueta",
+                                "created_at": "2018-01-04 18:31:23",
+                                "updated_at": "2018-01-04 18:31:23"
+                            }
+                        },
+                        {
+                            "id": 24,
+                            "name": "Hortense Schumm Jr.",
+                            "system_name": "hortense-schumm-jr",
+                            "field_type_id": 5,
+                            "created_at": "2018-01-05 10:12:17",
+                            "updated_at": "2018-01-05 10:12:17",
+                            "content_model_field_has_id": 24,
+                            "order": 8,
+                            "show_in_list": 0,
+                            "content_model_id": 5,
+                            "type": {
+                                "id": 5,
+                                "name": "Campo de archivo",
+                                "system_name": "textfile",
+                                "description": "Campo de archivo",
+                                "created_at": "2018-01-04 18:31:18",
+                                "updated_at": "2018-01-04 18:31:18"
+                            }
+                        },
+                        {
+                            "id": 25,
+                            "name": "Mr. Herman Graham",
+                            "system_name": "mr-herman-graham",
+                            "field_type_id": 4,
+                            "created_at": "2018-01-05 10:12:17",
+                            "updated_at": "2018-01-05 10:12:17",
+                            "content_model_field_has_id": 25,
+                            "order": 4,
+                            "show_in_list": 1,
+                            "content_model_id": 5,
+                            "type": {
+                                "id": 4,
+                                "name": "Campo de texto largo",
+                                "system_name": "textarea",
+                                "description": "Campo de texto largo",
+                                "created_at": "2018-01-04 18:31:17",
+                                "updated_at": "2018-01-04 18:31:17"
+                            }
+                        }
+                    ]
+                },
+                "status": {
+                    "code": "+A23.0",
+                    "message": "Get model fields by id content model"
+                }
+            }
+            
+
+### Update by id [PUT /api/v1/contentModel/{id}/field/{idField}]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+            
+    + Body
+    
+            {
+                "field_type_id": 1,
+                "name": "test",
+                "system_name": "test",
+                "order": 1,
+                "show_in_list": true
+            }
+            
++ Response 200 (application/json)
+
+    + Body
+
+            int{
+                "success": true,
+                "data": {
+                    "id": 33,
+                    "name": "Jaqueline Lindgren DVM",
+                    "system_name": "jaqueline-lindgren-dvm",
+                    "field_type_id": 9,
+                    "created_at": "2018-01-05 10:16:33",
+                    "updated_at": "2018-01-05 10:16:33",
+                    "content_model_field_has_id": 33,
+                    "order": 75,
+                    "show_in_list": 1,
+                    "content_model_id": 6
+                },
+                "status": {
+                    "code": "+A20.0",
+                    "message": "Model field has been modified"
+                }
+            }
+
 
 ## Field types [/api/v1/field/type]
 
