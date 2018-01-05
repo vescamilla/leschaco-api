@@ -141,35 +141,34 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
 + Request (application/json)
 
     + Headers
-    
-            client_id : "browserapp"
-            client_secret : 123456
-            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+            
+            Authorization: "Bearer token"
+            
 
 + Response 200 (application/json)
 
-        {
-            "menu":[
-                    {
-                        "content_type" : "Nombre del Módulo 1",
-                        "system_name": "nombre_sistema",
-                    },
-                    {
-                        "content_type" : "Nombre del Módulo 2",
-                        "system_name": "nombre_sistema",
-                    },
-                    {
-                        "content_type" : "Nombre del Módulo 3",
-                        "system_name": "nombre_sistema",
-                    },
-            
-                ],
-            "status": {
-                    "code": "+A1.0",
-                    "message": "Raw message",
-                    "success": true
+            {
+                "success": true,
+                "data": {
+                    "total": 1,
+                    "records": [
+                        {
+                        "id": 2,
+                        "system_user_id": 1,
+                        "name": "Mario Kris",
+                        "system_name": "mario-kris",
+                        "description": "Quo ut.",
+                        "order": 4,
+                        "created_at": "2018-01-04 18:58:23",
+                        "updated_at": "2018-01-04 18:58:23"
+                    }
+                ]
+                },
+                "status": {
+                    "code": "+A29.0",
+                    "message": "Get menu"
                 }
-        }
+            }
 
 
 ## Users [/api/v1/users]
@@ -473,26 +472,28 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
 
     + Headers
     
-            client_id : "browserapp"
-            client_secret : 123456
-            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+            Authorization: "Bearer token"
             
     + Body
             
 + Response 200 (application/json)
 
         {
-            "roles":[
-                {"id": 1,"name": "Administrador","description":"description","status": 1,"published_at": "2015-08-05T08:40:51.620Z"},
-                {"id": 2,"name": "Editor0","description":"description","status": 1,"published_at": "2015-08-05T08:40:51.620Z"},
-                {"id": 3,"name": "Editor1","description":"description","status": 1,"published_at": "2015-08-05T08:40:51.620Z"},
-                {"id": 4,"name": "Editor2","description":"description","status": 1,"published_at": "2015-08-05T08:40:51.620Z"}
-                ],
+            "success": true,
+            "benchmark": "2.64MB",
+            "data": {
+                "total": 4,
+                "records": [
+                    {"id": 1,"name": "Administrador","description":"description","status": 1,"published_at": "2015-08-05T08:40:51.620Z"},
+                    {"id": 2,"name": "Editor0","description":"description","status": 1,"published_at": "2015-08-05T08:40:51.620Z"},
+                    {"id": 3,"name": "Editor1","description":"description","status": 1,"published_at": "2015-08-05T08:40:51.620Z"},
+                    {"id": 4,"name": "Editor2","description":"description","status": 1,"published_at": "2015-08-05T08:40:51.620Z"}
+                ]
+            },
             "status": {
-                    "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
-                }
+                "code": "+A14.0",
+                "message": "Get all models"
+            }
         }
         
 ### Update [PUT/PATCH /api/v1/roles/{id}]
@@ -573,10 +574,11 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
     + Body
     
             {
-               "status": {
-                    "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
+                "success": true,
+                "benchmark": "2.39MB",
+                "status": {
+                    "code": "+A16.0",
+                    "message": "Role deleted successfully"
                 }
             }
 
