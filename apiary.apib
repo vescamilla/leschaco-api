@@ -320,20 +320,20 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
 
     + Body
     
-        {
-            "user":{
-                "username": "Username",
-                "password": "test$Pass",
-                "detail": {"name": "Test name","lastname": "Test lastname","phone": "5545678912","email": "test@test.com"},
-                "roles": [1,2,3],
-                "published_at": "2015-08-05T08:40:51.620Z"
-            },
-            "status": {
-                "code": "+A1.0",
-                "message": "Raw Message",
-                "success": true
+            {
+                "user":{
+                    "username": "Username",
+                    "password": "test$Pass",
+                    "detail": {"name": "Test name","lastname": "Test lastname","phone": "5545678912","email": "test@test.com"},
+                    "roles": [1,2,3],
+                    "published_at": "2015-08-05T08:40:51.620Z"
+                },
+                "status": {
+                    "code": "+A1.0",
+                    "message": "Raw Message",
+                    "success": true
+                }
             }
-        }
             
 ### Delete [DELETE /api/v1/users/{id}]
 
@@ -789,6 +789,7 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
 + Response 201 (application/json)
 
     + Body
+    n 
             {
                 "success": true,
                 "data": {
@@ -977,7 +978,7 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
 
     + Body
 
-            int{
+            {
                 "success": true,
                 "data": {
                     "id": 33,
