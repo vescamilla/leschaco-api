@@ -98,7 +98,7 @@ Obtiene el listado de permisos
 ------
 
         
-### Get menu [GET /api/v1/privileges]
+### Get privileges [GET /api/v1/privileges]
 + Request (application/json)
 
     + Headers
@@ -155,8 +155,48 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
                         {
                         "id": 2,
                         "system_user_id": 1,
-                        "name": "Mario Kris",
-                        "system_name": "mario-kris",
+                        "name": "Clientes",
+                        "system_name": "clientes",
+                        "description": "Quo ut.",
+                        "order": 4,
+                        "created_at": "2018-01-04 18:58:23",
+                        "updated_at": "2018-01-04 18:58:23"
+                    },
+                    {
+                        "id": 3,
+                        "system_user_id": 1,
+                        "name": "Facturas",
+                        "system_name": "facturas",
+                        "description": "Quo ut.",
+                        "order": 4,
+                        "created_at": "2018-01-04 18:58:23",
+                        "updated_at": "2018-01-04 18:58:23"
+                    },
+                    {
+                        "id": 4,
+                        "system_user_id": 1,
+                        "name": "Notas de crédito",
+                        "system_name": "notas",
+                        "description": "Quo ut.",
+                        "order": 4,
+                        "created_at": "2018-01-04 18:58:23",
+                        "updated_at": "2018-01-04 18:58:23"
+                    },
+                    {
+                        "id": 3,
+                        "system_user_id": 1,
+                        "name": "Acuses de recibo",
+                        "system_name": "acuses",
+                        "description": "Quo ut.",
+                        "order": 4,
+                        "created_at": "2018-01-04 18:58:23",
+                        "updated_at": "2018-01-04 18:58:23"
+                    },
+                    {
+                        "id": 5,
+                        "system_user_id": 1,
+                        "name": "Entregas",
+                        "system_name": "entregas",
                         "description": "Quo ut.",
                         "order": 4,
                         "created_at": "2018-01-04 18:58:23",
@@ -463,6 +503,7 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
                 },
             "status": {
                 "code": "+A14.0",
+Would it be something on our side then?
                 "message": "Get all models"
             }
         }
@@ -512,6 +553,7 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
             {
                 "name": "Test user name",
                 "description":"description",
+Would it be something on our side then?
                 "permissions": [
                     {
                         "content_type": 1,
@@ -549,6 +591,7 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
                         {
                             "content_type": 3,
                             "permission": [1,3]
+Would it be something on our side then?
                         }
                     ],
                     "published_at": "2015-08-05T08:40:51.620Z"
@@ -729,9 +772,9 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
                 "data": {
                     "id": 130,
                     "system_user_id": 1,
-                    "name": "testx",
-                    "system_name": "testx",
-                    "description": null,
+                    "name": "Facturas",
+                    "system_name": "facturas",
+                    "description": "Descripción",
                     "order": 1,
                     "status": 1,
                     "created_at": "2018-01-03 19:37:44",
@@ -780,10 +823,16 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
     
             {
                 "field_type_id": 1,
-                "name": "test",
+                "name": "título",
                 "system_name": "test",
                 "order": 1,
-                "show_in_list": true
+                "show_in_list": true,
+                "metadata":[
+                    {
+                        "system_name": "longitud",
+                        "value": 10
+                    }
+                ]
             }
         
 + Response 201 (application/json)
@@ -862,7 +911,13 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
                         "description": "Campo de texto largo",
                         "created_at": "2018-01-04 18:31:17",
                         "updated_at": "2018-01-04 18:31:17"
-                    }
+                    },
+                    "metadata": [
+                        {
+                            "system_name": "longitud",
+                            "value": "10"
+                        }
+                    ]
                 },
                 "status": {
                     "code": "+A1.0",
@@ -888,65 +943,85 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
                     "total": 10,
                     "records": [
                             {
-                            "id": 23,
-                            "name": "Micah Langosh",
-                            "system_name": "micah-langosh",
-                            "field_type_id": 9,
-                            "created_at": "2018-01-05 10:12:17",
-                            "updated_at": "2018-01-05 10:12:17",
-                            "content_model_field_has_id": 23,
-                            "order": 1,
-                            "show_in_list": 1,
-                            "content_model_id": 5,
-                            "type": {
-                                "id": 9,
-                                "name": "Etiqueta",
-                                "system_name": "label",
-                                "description": "Etiqueta",
-                                "created_at": "2018-01-04 18:31:23",
-                                "updated_at": "2018-01-04 18:31:23"
+                                "id": 23,
+                                "name": "Título",
+                                "system_name": "titulo",
+                                "field_type_id": 9,
+                                "created_at": "2018-01-05 10:12:17",
+                                "updated_at": "2018-01-05 10:12:17",
+                                "content_model_field_has_id": 23,
+                                "order": 1,
+                                "show_in_list": 1,
+                                "content_model_id": 5,
+                                "type": {
+                                    "id": 9,
+                                    "name": "Texto",
+                                    "system_name": "texto",
+                                    "description": "Descripción",
+                                    "created_at": "2018-01-04 18:31:23",
+                                    "updated_at": "2018-01-04 18:31:23"
+                                }
+                            },
+                            {
+                                "id": 24,
+                                "name": "Descripción",
+                                "system_name": "descripción",
+                                "field_type_id": 10,
+                                "created_at": "2018-01-05 10:12:17",
+                                "updated_at": "2018-01-05 10:12:17",
+                                "content_model_field_has_id": 24,
+                                "order": 1,
+                                "show_in_list": 1,
+                                "content_model_id": 5,
+                                "type": {
+                                    "id": 9,
+                                    "name": "Texto largo",
+                                    "system_name": "texto_largo",
+                                    "description": "Descripción",
+                                    "created_at": "2018-01-04 18:31:23",
+                                    "updated_at": "2018-01-04 18:31:23"
+                                }
+                            },
+                            {
+                                "id": 24,
+                                "name": "Imagen",
+                                "system_name": "imagen",
+                                "field_type_id": 5,
+                                "created_at": "2018-01-05 10:12:17",
+                                "updated_at": "2018-01-05 10:12:17",
+                                "content_model_field_has_id": 24,
+                                "order": 8,
+                                "show_in_list": 0,
+                                "content_model_id": 5,
+                                "type": {
+                                    "id": 5,
+                                    "name": "Imagen",
+                                    "system_name": "imagen",
+                                    "description": "Campo para cargar imagenes",
+                                    "created_at": "2018-01-04 18:31:18",
+                                    "updated_at": "2018-01-04 18:31:18"
+                                }
+                            },
+                            {
+                                "id": 25,
+                                "name": "Documentos",
+                                "system_name": "documentos",
+                                "field_type_id": 4,
+                                "created_at": "2018-01-05 10:12:17",
+                                "updated_at": "2018-01-05 10:12:17",
+                                "content_model_field_has_id": 25,
+                                "order": 4,
+                                "show_in_list": 1,
+                                "content_model_id": 5,
+                                "type": {
+                                    "id": 4,
+                                    "name": "Archivo",
+                                    "system_name": "archivo",
+                                    "description": "",
+                                    "created_at": "2018-01-04 18:31:17",
+                                    "updated_at": "2018-01-04 18:31:17"
+                                }
                             }
-                        },
-                        {
-                            "id": 24,
-                            "name": "Hortense Schumm Jr.",
-                            "system_name": "hortense-schumm-jr",
-                            "field_type_id": 5,
-                            "created_at": "2018-01-05 10:12:17",
-                            "updated_at": "2018-01-05 10:12:17",
-                            "content_model_field_has_id": 24,
-                            "order": 8,
-                            "show_in_list": 0,
-                            "content_model_id": 5,
-                            "type": {
-                                "id": 5,
-                                "name": "Campo de archivo",
-                                "system_name": "textfile",
-                                "description": "Campo de archivo",
-                                "created_at": "2018-01-04 18:31:18",
-                                "updated_at": "2018-01-04 18:31:18"
-                            }
-                        },
-                        {
-                            "id": 25,
-                            "name": "Mr. Herman Graham",
-                            "system_name": "mr-herman-graham",
-                            "field_type_id": 4,
-                            "created_at": "2018-01-05 10:12:17",
-                            "updated_at": "2018-01-05 10:12:17",
-                            "content_model_field_has_id": 25,
-                            "order": 4,
-                            "show_in_list": 1,
-                            "content_model_id": 5,
-                            "type": {
-                                "id": 4,
-                                "name": "Campo de texto largo",
-                                "system_name": "textarea",
-                                "description": "Campo de texto largo",
-                                "created_at": "2018-01-04 18:31:17",
-                                "updated_at": "2018-01-04 18:31:17"
-                            }
-                        }
                     ]
                 },
                 "status": {
@@ -998,152 +1073,593 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
                 }
             }
 
+## Field metadata [/api/v1/fieldMetadata]
 
-## Field types [/api/v1/field/type]
+### Create [POST /api/v1/fieldMetadata]
 
-------
++ Request (application/json)
 
-### Create [POST /api/v1/field/type]
-
-+ Response 200 (application/json)
-
+    + Headers
+    
+            Authorization: "Bearer token"
+            
     + Body
     
             {
-               "status": {
-                    "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
-                }
+                "name": "test name",
+                "system_name": "test-system-name",
+                "description": "test description"
             }
 
-### Update by id [PUT /api/v1/field/type/{id}]
-
 + Response 200 (application/json)
 
     + Body
     
             {
-               "status": {
-                    "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
-                }
-            }
-
-### Get all [GET /api/v1/field/type]
-
-+ Response 200 (application/json)
-
-    + Body
-    
-            {
-               "status": {
-                    "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
-                }
-            }
-
-### Get by ID [GET /api/v1/field/type/{id}]
-
-+ Response 200 (application/json)
-
-    + Body
-    
-            {
-               "status": {
-                    "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
-                }
-            }
-
-### Delete [DELETE /api/v1/field/type/{id}]
-
-+ Response 200 (application/json)
-
-    + Body
-    
-            {
-               "status": {
-                    "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
+                "success": true,
+                "data": {
+                    "id": 29,
+                    "name": "test name",
+                    "system_name": "test-system-name",
+                    "description": "test description",
+                    "created_at": "2018-01-09 12:42:30",
+                    "updated_at": "2018-01-09 12:42:30"
+                },
+                "status": {
+                    "code": "+A37.0",
+                    "message": "Field metadata created"
                 }
             }
             
-## Fields by content type [/api/v1/content-type/{system_name}/field]
+            
+### Delete [DELETE /api/v1/fieldMetadata/{id}]
+
++ Headers
+    
+            Authorization: "Bearer token"
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "status": {
+                    "code": "+A38.0",
+                    "message": "Field metadata deleted"
+                }
+            }
+            
+ 
+### Get all [GET /api/v1/fieldMetadata]
+
+
++ Headers
+    
+            Authorization: "Bearer token"
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "data": {
+                    "total": 30,
+                    "records": [
+                        {
+                            "id": 1,
+                            "name": "Identificador",
+                            "system_name": "id",
+                            "description": "Identificador unico",
+                            "created_at": "2018-01-04 18:31:10",
+                            "updated_at": "2018-01-04 18:31:10"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Nombre",
+                            "system_name": "name",
+                            "description": "Nombre",
+                            "created_at": "2018-01-04 18:31:10",
+                            "updated_at": "2018-01-04 18:31:10"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Valor",
+                            "system_name": "value",
+                            "description": "Valor",
+                            "created_at": "2018-01-04 18:31:10",
+                            "updated_at": "2018-01-04 18:31:10"
+                        }
+                    ]
+                },
+                "status": {
+                    "code": "+A36.0",
+                    "message": "Get all fields metadata"
+                }
+            }
+            
+            
+### Get by id [GET /api/v1/fieldMetadata/{id}]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+            
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "data": {
+                    "id": 39,
+                    "name": "Mrs. Veronica Keebler",
+                    "system_name": "mrs-veronica-keebler",
+                    "description": "Minus saepe rerum.",
+                    "created_at": "2018-01-09 16:25:50",
+                    "updated_at": "2018-01-09 16:25:50"
+                },
+                "status": {
+                    "code": "+A39.0",
+                    "message": "Get field metadata by id"
+                }
+            }
+
+ 
+## Field types [/api/v1/fieldType]
 
 ------
 
-### Create [POST /api/v1/content-type/{system_name}/field]
+### Create [POST /api/v1/fieldType]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+            
+    + Body
+    
+            {
+                "name": "test name",
+                "system_name": "test-system-name",
+                "description": "test description"
+            }
 
 + Response 200 (application/json)
 
     + Body
     
             {
-               "status": {
-                    "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
+                "success": true
+                "status": {
+                    "code": "+A30.0",
+                    "message": "Field type created"
+                }
+            }
+            
+
+
+### Update by id [PUT /api/v1/fieldType/{id}]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+            
+     + Body
+    
+            {
+                "name": "test name",
+                "system_name": "test-system-name",
+                "description": "test description"
+            }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "data": {
+                    "id": 1,
+                    "name": "test name",
+                    "system_name": "test-system-name",
+                    "description": "test description"
+                },
+                "status": {
+                    "code": "+A33.0",
+                    "message": "Field type has been modified"
                 }
             }
 
-### Update by id [PUT /api/v1/content-type/{system_name}/field/{id}]
+### Get all [GET /api/v1/fieldType]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
 
 + Response 200 (application/json)
 
     + Body
     
             {
-               "status": {
-                    "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
+                "success": true,
+                "data": {
+                    "total": 3,
+                    "records": [
+                        {
+                            "id": 1,
+                            "name": "Campo de texto",
+                            "system_name": "textfield",
+                            "description": "Campo de texto",
+                            "created_at": "2018-01-04 18:31:15",
+                            "updated_at": "2018-01-04 18:31:15"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Campo de correo electrónico",
+                            "system_name": "emailfield",
+                            "description": "Campo de correo electrónico",
+                            "created_at": "2018-01-04 18:31:16",
+                            "updated_at": "2018-01-04 18:31:16"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Campo de fecha",
+                            "system_name": "datefield",
+                            "description": "Campo de fecha",
+                            "created_at": "2018-01-04 18:31:17",
+                            "updated_at": "2018-01-04 18:31:17"
+                        }
+                    ]
+                },
+                "status": {
+                    "code": "+A34.0",
+                    "message": "Get all fields types"
                 }
             }
+            
+### Delete [DELETE /api/v1/fieldType/{id}]
 
-### Get all [GET /api/v1/content-type/{system_name}/field]
++ Request (application/json)
 
+    + Headers
+    
+            Authorization: "Bearer token"
+            
 + Response 200 (application/json)
 
     + Body
     
             {
-               "status": {
-                    "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
+                "success": true,
+                "status": {
+                    "code": "+A32.0",
+                    "message": "Field type deleted"
                 }
             }
+            
+## Fields [/api/v1/fields]
 
-### Get by ID [GET /api/v1/content-type/{system_name}/field/{id}]
+------
+
+### Get all [GET /api/v1/fields]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
 
 + Response 200 (application/json)
 
     + Body
     
             {
-               "status": {
-                    "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
-                }
-            }
-
-### Delete [DELETE /api/v1/content-type/{system_name}/field/{id}]
-
-+ Response 200 (application/json)
-
-    + Body
-    
-            {
-               "status": {
-                    "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
+                "success": true,
+                "data": {
+                    "total": 10,
+                    "records": [
+                        {
+                            "id": 447,
+                            "name": "UUID",
+                            "system_name": "invoice-uuid",
+                            "field_type_id": 1,
+                            "created_at": "2018-01-05 18:01:41",
+                            "updated_at": "2018-01-05 18:09:43",
+                            "type": {
+                                "id": 1,
+                                "name": "Campo de texto",
+                                "system_name": "textfield",
+                                "description": "Campo de texto",
+                                "created_at": "2018-01-04 18:31:15",
+                                "updated_at": "2018-01-04 18:31:15",
+                                "metadata": [
+                                    {
+                                        "id": 3,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 22,
+                                        "system_name": "class"
+                                    },
+                                    {
+                                        "id": 9,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 25,
+                                        "system_name": "disabled"
+                                    },
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 1,
+                                        "system_name": "id"
+                                    },
+                                    {
+                                        "id": 12,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 11,
+                                        "system_name": "maxlength"
+                                    },
+                                    {
+                                        "id": 11,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 12,
+                                        "system_name": "minlength"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 2,
+                                        "system_name": "name"
+                                    },
+                                    {
+                                        "id": 10,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 7,
+                                        "system_name": "placeholder"
+                                    },
+                                    {
+                                        "id": 7,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 6,
+                                        "system_name": "size"
+                                    },
+                                    {
+                                        "id": 4,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 23,
+                                        "system_name": "style"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 19,
+                                        "system_name": "tabindex"
+                                    },
+                                    {
+                                        "id": 8,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 5,
+                                        "system_name": "type"
+                                    },
+                                    {
+                                        "id": 5,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 3,
+                                        "system_name": "value"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 448,
+                            "name": "Total",
+                            "system_name": "invoice-total",
+                            "field_type_id": 8,
+                            "created_at": "2018-01-05 18:01:42",
+                            "updated_at": "2018-01-05 18:09:43",
+                            "type": {
+                                "id": 8,
+                                "name": "Campo numérico",
+                                "system_name": "numberfield",
+                                "description": "Campo numérico",
+                                "created_at": "2018-01-04 18:31:21",
+                                "updated_at": "2018-01-04 18:31:21",
+                                "metadata": [
+                                    {
+                                        "id": 86,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 22,
+                                        "system_name": "class"
+                                    },
+                                    {
+                                        "id": 92,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 25,
+                                        "system_name": "disabled"
+                                    },
+                                    {
+                                        "id": 84,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 1,
+                                        "system_name": "id"
+                                    },
+                                    {
+                                        "id": 98,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 10,
+                                        "system_name": "max"
+                                    },
+                                    {
+                                        "id": 95,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 11,
+                                        "system_name": "maxlength"
+                                    },
+                                    {
+                                        "id": 97,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 9,
+                                        "system_name": "min"
+                                    },
+                                    {
+                                        "id": 94,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 12,
+                                        "system_name": "minlength"
+                                    },
+                                    {
+                                        "id": 85,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 2,
+                                        "system_name": "name"
+                                    },
+                                    {
+                                        "id": 93,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 7,
+                                        "system_name": "placeholder"
+                                    },
+                                    {
+                                        "id": 90,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 6,
+                                        "system_name": "size"
+                                    },
+                                    {
+                                        "id": 96,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 8,
+                                        "system_name": "step"
+                                    },
+                                    {
+                                        "id": 87,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 23,
+                                        "system_name": "style"
+                                    },
+                                    {
+                                        "id": 89,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 19,
+                                        "system_name": "tabindex"
+                                    },
+                                    {
+                                        "id": 91,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 5,
+                                        "system_name": "type"
+                                    },
+                                    {
+                                        "id": 88,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 3,
+                                        "system_name": "value"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 449,
+                            "name": "Fecha",
+                            "system_name": "invoice-date",
+                            "field_type_id": 3,
+                            "created_at": "2018-01-05 18:01:42",
+                            "updated_at": "2018-01-05 18:09:44",
+                            "type": {
+                                "id": 3,
+                                "name": "Campo de fecha",
+                                "system_name": "datefield",
+                                "description": "Campo de fecha",
+                                "created_at": "2018-01-04 18:31:17",
+                                "updated_at": "2018-01-04 18:31:17",
+                                "metadata": [
+                                    {
+                                        "id": 27,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 22,
+                                        "system_name": "class"
+                                    },
+                                    {
+                                        "id": 33,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 25,
+                                        "system_name": "disabled"
+                                    },
+                                    {
+                                        "id": 25,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 1,
+                                        "system_name": "id"
+                                    },
+                                    {
+                                        "id": 36,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 11,
+                                        "system_name": "maxlength"
+                                    },
+                                    {
+                                        "id": 35,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 12,
+                                        "system_name": "minlength"
+                                    },
+                                    {
+                                        "id": 26,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 2,
+                                        "system_name": "name"
+                                    },
+                                    {
+                                        "id": 34,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 7,
+                                        "system_name": "placeholder"
+                                    },
+                                    {
+                                        "id": 31,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 6,
+                                        "system_name": "size"
+                                    },
+                                    {
+                                        "id": 28,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 23,
+                                        "system_name": "style"
+                                    },
+                                    {
+                                        "id": 30,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 19,
+                                        "system_name": "tabindex"
+                                    },
+                                    {
+                                        "id": 32,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 5,
+                                        "system_name": "type"
+                                    },
+                                    {
+                                        "id": 29,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 3,
+                                        "system_name": "value"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "status": {
+                    "code": "+A42.0",
+                    "message": "Get all fields"
                 }
             }
             
