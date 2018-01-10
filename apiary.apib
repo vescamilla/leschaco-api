@@ -811,6 +811,55 @@ Would it be something on our side then?
 
 ----
 
+### Create exist field [POST /api/v1/contentModel/{id}/field/{idField}]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+            
+    + Body
+    
+            {
+                "order": 1,
+                "show_in_list": true
+            }
+        
++ Response 201 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "data": {
+                    "id": 25,
+                    "name": "título",
+                    "system_name": "título",
+                    "description": null,
+                    "field_type_id": 9,
+                    "created_at": "2018-01-09 23:00:37",
+                    "updated_at": "2018-01-09 23:00:37",
+                    "content_model_field_has_id": 20,
+                    "order": 1,
+                    "show_in_list": 1,
+                    "content_model_id": 56,
+                    "metavalue": {
+                        "id": 11,
+                        "field_metadata_id": 53,
+                        "value": 10,
+                        "content_model_field_has_content_model_id": 20,
+                        "created_at": "2018-01-09 23:00:38",
+                        "updated_at": "2018-01-09 23:00:38"
+                    }
+                },
+                "status": {
+                    "code": "+A19.0",
+                    "message": "Model field has been created"
+                }
+            }
+            
+
 ### Create [POST /api/v1/contentModel/{id}/field]
 
 + Request (application/json)
@@ -1310,23 +1359,355 @@ Would it be something on our side then?
                             "system_name": "textfield",
                             "description": "Campo de texto",
                             "created_at": "2018-01-04 18:31:15",
-                            "updated_at": "2018-01-04 18:31:15"
+                            "updated_at": "2018-01-04 18:31:15",
+                            "metadata": [
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 1,
+                                        "system_name": "id"
+                                    },
+                                    {
+                                        "id": 12,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 11,
+                                        "system_name": "maxlength"
+                                    },
+                                    {
+                                        "id": 11,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 12,
+                                        "system_name": "minlength"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 2,
+                                        "system_name": "name"
+                                    },
+                                    {
+                                        "id": 10,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 7,
+                                        "system_name": "placeholder"
+                                    },
+                                    {
+                                        "id": 7,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 6,
+                                        "system_name": "size"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "field_type_id": 1,
+                                        "field_metadata_id": 19,
+                                        "system_name": "tabindex"
+                                    }
+                                ]
                         },
                         {
                             "id": 2,
-                            "name": "Campo de correo electrónico",
-                            "system_name": "emailfield",
-                            "description": "Campo de correo electrónico",
-                            "created_at": "2018-01-04 18:31:16",
-                            "updated_at": "2018-01-04 18:31:16"
+                            "name": "Texto largo",
+                            "system_name": "textarea",
+                            "description": "Campo de texto largo",
+                            "created_at": "2018-01-04 18:31:15",
+                            "updated_at": "2018-01-04 18:31:15",
+                            "metadata": [
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 2,
+                                        "field_metadata_id": 1,
+                                        "system_name": "id"
+                                    },
+                                    {
+                                        "id": 12,
+                                        "field_type_id": 2,
+                                        "field_metadata_id": 11,
+                                        "system_name": "maxlength"
+                                    },
+                                    {
+                                        "id": 11,
+                                        "field_type_id": 2,
+                                        "field_metadata_id": 12,
+                                        "system_name": "minlength"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "field_type_id": 2,
+                                        "field_metadata_id": 2,
+                                        "system_name": "name"
+                                    },
+                                    {
+                                        "id": 10,
+                                        "field_type_id": 2,
+                                        "field_metadata_id": 7,
+                                        "system_name": "placeholder"
+                                    },
+                                    {
+                                        "id": 7,
+                                        "field_type_id": 2,
+                                        "field_metadata_id": 6,
+                                        "system_name": "size"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "field_type_id": 2,
+                                        "field_metadata_id": 19,
+                                        "system_name": "tabindex"
+                                    }
+                                ]
                         },
                         {
                             "id": 3,
+                            "name": "Texto numérico",
+                            "system_name": "number",
+                            "description": "Campo de número",
+                            "created_at": "2018-01-04 18:31:15",
+                            "updated_at": "2018-01-04 18:31:15",
+                            "metadata": [
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 1,
+                                        "system_name": "id"
+                                    },
+                                    {
+                                        "id": 12,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 11,
+                                        "system_name": "maxlength"
+                                    },
+                                    {
+                                        "id": 11,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 12,
+                                        "system_name": "minlength"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 2,
+                                        "system_name": "name"
+                                    },
+                                    {
+                                        "id": 10,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 7,
+                                        "system_name": "placeholder"
+                                    },
+                                    {
+                                        "id": 7,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 6,
+                                        "system_name": "size"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "field_type_id": 3,
+                                        "field_metadata_id": 19,
+                                        "system_name": "tabindex"
+                                    }
+                                ]
+                        },
+                        {
+                            "id": 4,
+                            "name": "Imagen",
+                            "system_name": "image",
+                            "description": "Campo de imagen",
+                            "created_at": "2018-01-04 18:31:15",
+                            "updated_at": "2018-01-04 18:31:15",
+                            "metadata": [
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 1,
+                                        "system_name": "id"
+                                    },
+                                    {
+                                        "id": 12,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 11,
+                                        "system_name": "maxlength"
+                                    },
+                                    {
+                                        "id": 11,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 12,
+                                        "system_name": "minlength"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 2,
+                                        "system_name": "name"
+                                    },
+                                    {
+                                        "id": 10,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 7,
+                                        "system_name": "placeholder"
+                                    },
+                                    {
+                                        "id": 7,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 6,
+                                        "system_name": "multiple"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 19,
+                                        "system_name": "tabindex"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 19,
+                                        "system_name": "ubicacion"
+                                    }
+                                ]
+                        },
+                        {
+                            "id": 5,
+                            "name": "Archivo",
+                            "system_name": "file",
+                            "description": "Campo de archivo",
+                            "created_at": "2018-01-04 18:31:15",
+                            "updated_at": "2018-01-04 18:31:15",
+                            "metadata": [
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 1,
+                                        "system_name": "id"
+                                    },
+                                    {
+                                        "id": 12,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 11,
+                                        "system_name": "maxlength"
+                                    },
+                                    {
+                                        "id": 11,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 12,
+                                        "system_name": "minlength"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 2,
+                                        "system_name": "name"
+                                    },
+                                    {
+                                        "id": 10,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 7,
+                                        "system_name": "placeholder"
+                                    },
+                                    {
+                                        "id": 7,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 6,
+                                        "system_name": "multiple"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 19,
+                                        "system_name": "tabindex"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 19,
+                                        "system_name": "ubicacion"
+                                    }
+                                ]
+                        },
+                        {
+                            "id": 6,
                             "name": "Campo de fecha",
-                            "system_name": "datefield",
+                            "system_name": "date",
                             "description": "Campo de fecha",
+                            "created_at": "2018-01-04 18:31:16",
+                            "updated_at": "2018-01-04 18:31:16",
+                            "metadata": [
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 6,
+                                        "field_metadata_id": 1,
+                                        "system_name": "id"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "field_type_id": 6,
+                                        "field_metadata_id": 2,
+                                        "system_name": "name"
+                                    },
+                                    {
+                                        "id": 10,
+                                        "field_type_id": 6,
+                                        "field_metadata_id": 7,
+                                        "system_name": "placeholder"
+                                    },
+                                    {
+                                        "id": 7,
+                                        "field_type_id": 6,
+                                        "field_metadata_id": 6,
+                                        "system_name": "size"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "field_type_id": 6,
+                                        "field_metadata_id": 19,
+                                        "system_name": "tabindex"
+                                    }
+                                ]
+                        },
+                        {
+                            "id": 7,
+                            "name": "Relación a entidad",
+                            "system_name": "entity",
+                            "description": "Campo de relación a entidad",
                             "created_at": "2018-01-04 18:31:17",
-                            "updated_at": "2018-01-04 18:31:17"
+                            "updated_at": "2018-01-04 18:31:17",
+                            "metadata": [
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 7,
+                                        "field_metadata_id": 1,
+                                        "system_name": "entity_id"
+                                    },
+                                    {
+                                        "id": 12,
+                                        "field_type_id": 7,
+                                        "field_metadata_id": 11,
+                                        "system_name": "multiple"
+                                    }
+                                ]
+                        },
+                        {
+                            "id": 8,
+                            "name": "Lista personalizada",
+                            "system_name": "custom_list",
+                            "description": "Campo de lista personalizada",
+                            "created_at": "2018-01-04 18:31:17",
+                            "updated_at": "2018-01-04 18:31:17",
+                            "metadata": [
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 1,
+                                        "system_name": "list_values"
+                                    },
+                                    {
+                                        "id": 12,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 11,
+                                        "system_name": "multiple"
+                                    }
+                                ]
                         }
                     ]
                 },
@@ -1393,18 +1774,6 @@ Would it be something on our side then?
                                 "updated_at": "2018-01-04 18:31:15",
                                 "metadata": [
                                     {
-                                        "id": 3,
-                                        "field_type_id": 1,
-                                        "field_metadata_id": 22,
-                                        "system_name": "class"
-                                    },
-                                    {
-                                        "id": 9,
-                                        "field_type_id": 1,
-                                        "field_metadata_id": 25,
-                                        "system_name": "disabled"
-                                    },
-                                    {
                                         "id": 1,
                                         "field_type_id": 1,
                                         "field_metadata_id": 1,
@@ -1441,226 +1810,370 @@ Would it be something on our side then?
                                         "system_name": "size"
                                     },
                                     {
-                                        "id": 4,
-                                        "field_type_id": 1,
-                                        "field_metadata_id": 23,
-                                        "system_name": "style"
-                                    },
-                                    {
                                         "id": 6,
                                         "field_type_id": 1,
                                         "field_metadata_id": 19,
                                         "system_name": "tabindex"
-                                    },
-                                    {
-                                        "id": 8,
-                                        "field_type_id": 1,
-                                        "field_metadata_id": 5,
-                                        "system_name": "type"
-                                    },
-                                    {
-                                        "id": 5,
-                                        "field_type_id": 1,
-                                        "field_metadata_id": 3,
-                                        "system_name": "value"
                                     }
                                 ]
                             }
                         },
                         {
                             "id": 448,
-                            "name": "Total",
-                            "system_name": "invoice-total",
-                            "field_type_id": 8,
-                            "created_at": "2018-01-05 18:01:42",
+                            "name": "Observaciones",
+                            "system_name": "observaciones",
+                            "field_type_id": 2,
+                            "created_at": "2018-01-05 18:01:41",
                             "updated_at": "2018-01-05 18:09:43",
                             "type": {
-                                "id": 8,
-                                "name": "Campo numérico",
-                                "system_name": "numberfield",
-                                "description": "Campo numérico",
-                                "created_at": "2018-01-04 18:31:21",
-                                "updated_at": "2018-01-04 18:31:21",
+                                "id": 2,
+                                "name": "Texto largo",
+                                "system_name": "textarea",
+                                "description": "Campo de texto largo",
+                                "created_at": "2018-01-04 18:31:15",
+                                "updated_at": "2018-01-04 18:31:15",
                                 "metadata": [
                                     {
-                                        "id": 86,
-                                        "field_type_id": 8,
-                                        "field_metadata_id": 22,
-                                        "system_name": "class"
-                                    },
-                                    {
-                                        "id": 92,
-                                        "field_type_id": 8,
-                                        "field_metadata_id": 25,
-                                        "system_name": "disabled"
-                                    },
-                                    {
-                                        "id": 84,
-                                        "field_type_id": 8,
+                                        "id": 1,
+                                        "field_type_id": 2,
                                         "field_metadata_id": 1,
                                         "system_name": "id"
                                     },
                                     {
-                                        "id": 98,
-                                        "field_type_id": 8,
-                                        "field_metadata_id": 10,
-                                        "system_name": "max"
-                                    },
-                                    {
-                                        "id": 95,
-                                        "field_type_id": 8,
+                                        "id": 12,
+                                        "field_type_id": 2,
                                         "field_metadata_id": 11,
                                         "system_name": "maxlength"
                                     },
                                     {
-                                        "id": 97,
-                                        "field_type_id": 8,
-                                        "field_metadata_id": 9,
-                                        "system_name": "min"
-                                    },
-                                    {
-                                        "id": 94,
-                                        "field_type_id": 8,
+                                        "id": 11,
+                                        "field_type_id": 2,
                                         "field_metadata_id": 12,
                                         "system_name": "minlength"
                                     },
                                     {
-                                        "id": 85,
-                                        "field_type_id": 8,
+                                        "id": 2,
+                                        "field_type_id": 2,
                                         "field_metadata_id": 2,
                                         "system_name": "name"
                                     },
                                     {
-                                        "id": 93,
-                                        "field_type_id": 8,
+                                        "id": 10,
+                                        "field_type_id": 2,
                                         "field_metadata_id": 7,
                                         "system_name": "placeholder"
                                     },
                                     {
-                                        "id": 90,
-                                        "field_type_id": 8,
+                                        "id": 7,
+                                        "field_type_id": 2,
                                         "field_metadata_id": 6,
                                         "system_name": "size"
                                     },
                                     {
-                                        "id": 96,
-                                        "field_type_id": 8,
-                                        "field_metadata_id": 8,
-                                        "system_name": "step"
-                                    },
-                                    {
-                                        "id": 87,
-                                        "field_type_id": 8,
-                                        "field_metadata_id": 23,
-                                        "system_name": "style"
-                                    },
-                                    {
-                                        "id": 89,
-                                        "field_type_id": 8,
+                                        "id": 6,
+                                        "field_type_id": 2,
                                         "field_metadata_id": 19,
                                         "system_name": "tabindex"
-                                    },
-                                    {
-                                        "id": 91,
-                                        "field_type_id": 8,
-                                        "field_metadata_id": 5,
-                                        "system_name": "type"
-                                    },
-                                    {
-                                        "id": 88,
-                                        "field_type_id": 8,
-                                        "field_metadata_id": 3,
-                                        "system_name": "value"
                                     }
                                 ]
                             }
                         },
                         {
                             "id": 449,
-                            "name": "Fecha",
-                            "system_name": "invoice-date",
+                            "name": "Número de factura",
+                            "system_name": "numero-factura",
                             "field_type_id": 3,
-                            "created_at": "2018-01-05 18:01:42",
-                            "updated_at": "2018-01-05 18:09:44",
+                            "created_at": "2018-01-05 18:01:41",
+                            "updated_at": "2018-01-05 18:09:43",
                             "type": {
                                 "id": 3,
-                                "name": "Campo de fecha",
-                                "system_name": "datefield",
-                                "description": "Campo de fecha",
-                                "created_at": "2018-01-04 18:31:17",
-                                "updated_at": "2018-01-04 18:31:17",
+                                "name": "Campo numérico",
+                                "system_name": "number",
+                                "description": "Campo de números",
+                                "created_at": "2018-01-04 18:31:15",
+                                "updated_at": "2018-01-04 18:31:15",
                                 "metadata": [
                                     {
-                                        "id": 27,
-                                        "field_type_id": 3,
-                                        "field_metadata_id": 22,
-                                        "system_name": "class"
-                                    },
-                                    {
-                                        "id": 33,
-                                        "field_type_id": 3,
-                                        "field_metadata_id": 25,
-                                        "system_name": "disabled"
-                                    },
-                                    {
-                                        "id": 25,
+                                        "id": 1,
                                         "field_type_id": 3,
                                         "field_metadata_id": 1,
                                         "system_name": "id"
                                     },
                                     {
-                                        "id": 36,
+                                        "id": 12,
                                         "field_type_id": 3,
                                         "field_metadata_id": 11,
                                         "system_name": "maxlength"
                                     },
                                     {
-                                        "id": 35,
+                                        "id": 11,
                                         "field_type_id": 3,
                                         "field_metadata_id": 12,
                                         "system_name": "minlength"
                                     },
                                     {
-                                        "id": 26,
+                                        "id": 2,
                                         "field_type_id": 3,
                                         "field_metadata_id": 2,
                                         "system_name": "name"
                                     },
                                     {
-                                        "id": 34,
+                                        "id": 10,
                                         "field_type_id": 3,
                                         "field_metadata_id": 7,
                                         "system_name": "placeholder"
                                     },
                                     {
-                                        "id": 31,
+                                        "id": 7,
                                         "field_type_id": 3,
                                         "field_metadata_id": 6,
                                         "system_name": "size"
                                     },
                                     {
-                                        "id": 28,
+                                        "id": 6,
                                         "field_type_id": 3,
-                                        "field_metadata_id": 23,
-                                        "system_name": "style"
+                                        "field_metadata_id": 19,
+                                        "system_name": "tabindex"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 450,
+                            "name": "Imagen principal",
+                            "system_name": "imagen-principal",
+                            "field_type_id": 4,
+                            "created_at": "2018-01-05 18:01:41",
+                            "updated_at": "2018-01-05 18:09:43",
+                            "type": {
+                                "id": 4,
+                                "name": "Campo de imagen",
+                                "system_name": "image",
+                                "description": "Campo de imagen",
+                                "created_at": "2018-01-04 18:31:15",
+                                "updated_at": "2018-01-04 18:31:15",
+                                "metadata": [
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 1,
+                                        "system_name": "id"
                                     },
                                     {
-                                        "id": 30,
-                                        "field_type_id": 3,
+                                        "id": 12,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 11,
+                                        "system_name": "maxlength"
+                                    },
+                                    {
+                                        "id": 11,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 12,
+                                        "system_name": "minlength"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 2,
+                                        "system_name": "name"
+                                    },
+                                    {
+                                        "id": 10,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 7,
+                                        "system_name": "placeholder"
+                                    },
+                                    {
+                                        "id": 7,
+                                        "field_type_id": 4,
+                                        "field_metadata_id": 6,
+                                        "system_name": "multiple"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "field_type_id": 4,
                                         "field_metadata_id": 19,
                                         "system_name": "tabindex"
                                     },
                                     {
-                                        "id": 32,
-                                        "field_type_id": 3,
-                                        "field_metadata_id": 5,
-                                        "system_name": "type"
+                                        "id": 6,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 19,
+                                        "system_name": "ubicacion"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 451,
+                            "name": "Documento",
+                            "system_name": "documento",
+                            "field_type_id": 5,
+                            "created_at": "2018-01-05 18:01:41",
+                            "updated_at": "2018-01-05 18:09:43",
+                            "type": {
+                                "id": 5,
+                                "name": "Campo de archivo",
+                                "system_name": "file",
+                                "description": "Campo de imagen",
+                                "created_at": "2018-01-04 18:31:15",
+                                "updated_at": "2018-01-04 18:31:15",
+                                "metadata": [
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 1,
+                                        "system_name": "id"
                                     },
                                     {
-                                        "id": 29,
-                                        "field_type_id": 3,
-                                        "field_metadata_id": 3,
-                                        "system_name": "value"
+                                        "id": 12,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 11,
+                                        "system_name": "maxlength"
+                                    },
+                                    {
+                                        "id": 11,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 12,
+                                        "system_name": "minlength"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 2,
+                                        "system_name": "name"
+                                    },
+                                    {
+                                        "id": 10,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 7,
+                                        "system_name": "placeholder"
+                                    },
+                                    {
+                                        "id": 7,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 6,
+                                        "system_name": "multiple"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 19,
+                                        "system_name": "tabindex"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "field_type_id": 5,
+                                        "field_metadata_id": 19,
+                                        "system_name": "ubicacion"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 452,
+                            "name": "Fecha",
+                            "system_name": "fecha",
+                            "field_type_id": 6,
+                            "created_at": "2018-01-05 18:01:41",
+                            "updated_at": "2018-01-05 18:09:43",
+                            "type": {
+                                "id": 6,
+                                "name": "Fecha",
+                                "system_name": "date",
+                                "description": "Campo de fecha",
+                                "created_at": "2018-01-04 18:31:15",
+                                "updated_at": "2018-01-04 18:31:15",
+                                "metadata": [
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 6,
+                                        "field_metadata_id": 1,
+                                        "system_name": "id"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "field_type_id": 6,
+                                        "field_metadata_id": 2,
+                                        "system_name": "name"
+                                    },
+                                    {
+                                        "id": 10,
+                                        "field_type_id": 6,
+                                        "field_metadata_id": 7,
+                                        "system_name": "placeholder"
+                                    },
+                                    {
+                                        "id": 7,
+                                        "field_type_id": 6,
+                                        "field_metadata_id": 6,
+                                        "system_name": "size"
+                                    },
+                                    {
+                                        "id": 6,
+                                        "field_type_id": 6,
+                                        "field_metadata_id": 19,
+                                        "system_name": "tabindex"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 453,
+                            "name": "Clientes",
+                            "system_name": "clientes",
+                            "field_type_id": 7,
+                            "created_at": "2018-01-05 18:01:41",
+                            "updated_at": "2018-01-05 18:09:43",
+                            "type": {
+                                "id": 7,
+                                "name": "Relación a entidad",
+                                "system_name": "entity",
+                                "description": "Campo para relacionar entidades",
+                                "created_at": "2018-01-04 18:31:15",
+                                "updated_at": "2018-01-04 18:31:15",
+                                "metadata": [
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 7,
+                                        "field_metadata_id": 1,
+                                        "system_name": "entity_id"
+                                    },
+                                    {
+                                        "id": 12,
+                                        "field_type_id": 7,
+                                        "field_metadata_id": 11,
+                                        "system_name": "multiple"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 454,
+                            "name": "Lista",
+                            "system_name": "lista",
+                            "field_type_id": 8,
+                            "created_at": "2018-01-05 18:01:41",
+                            "updated_at": "2018-01-05 18:09:43",
+                            "type": {
+                                "id": 8,
+                                "name": "Lista",
+                                "system_name": "list",
+                                "description": "Campo para crear lista personalizada",
+                                "created_at": "2018-01-04 18:31:15",
+                                "updated_at": "2018-01-04 18:31:15",
+                                "metadata": [
+                                    {
+                                        "id": 1,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 1,
+                                        "system_name": "list_values"
+                                    },
+                                    {
+                                        "id": 12,
+                                        "field_type_id": 8,
+                                        "field_metadata_id": 11,
+                                        "system_name": "multiple"
                                     }
                                 ]
                             }
@@ -1789,7 +2302,7 @@ Would it be something on our side then?
             }
             
 
-### Get all by content type [GET /api/v1/content]
+### Get all [GET /api/v1/content]
 
 + Request (application/json)
 
@@ -1820,6 +2333,154 @@ Would it be something on our side then?
                     "message": "Get all content"
                 }
             }
+            
+### Get all by content type [GET /api/v1/content/{systemName}]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+            
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "data": {
+                    "total": 1,
+                    "records": [
+                        {
+                            "id": 60,
+                            "system_user_id": 1,
+                            "content_model_id": 61,
+                            "created_at": "2018-01-10 11:57:54",
+                            "updated_at": "2018-01-10 11:57:54",
+                            "content_model_system_name": "dr-cheyenne-reichert-jr",
+                            "content_model_name": "Dr. Cheyenne Reichert Jr.",
+                            "fields": [
+                                {
+                                    "id": 601,
+                                    "content_id": 60,
+                                    "value": "5a565422d9028",
+                                    "content_model_field_has_content_model_id": 601,
+                                    "created_at": "2018-01-10 11:57:54",
+                                    "updated_at": "2018-01-10 11:57:54",
+                                    "content_model_field_id": 601,
+                                    "content_model_id": 61,
+                                    "order": 2,
+                                    "show_in_list": 1,
+                                    "name": "Prof. Zion Streich",
+                                    "system_name": "prof-zion-streich",
+                                    "description": null,
+                                    "field_type_id": 5,
+                                    "type": {
+                                        "id": 601,
+                                        "field_type_id": 5,
+                                        "name": "Campo de archivo",
+                                        "system_name": "textfile"
+                                    }
+                                },
+                                {
+                                    "id": 605,
+                                    "content_id": 60,
+                                    "value": "5a565422d9474",
+                                    "content_model_field_has_content_model_id": 605,
+                                    "created_at": "2018-01-10 11:57:54",
+                                    "updated_at": "2018-01-10 11:57:54",
+                                    "content_model_field_id": 605,
+                                    "content_model_id": 61,
+                                    "order": 2,
+                                    "show_in_list": 1,
+                                    "name": "Mrs. Aracely Brekke",
+                                    "system_name": "mrs-aracely-brekke",
+                                    "description": null,
+                                    "field_type_id": 5,
+                                    "type": {
+                                        "id": 605,
+                                        "field_type_id": 5,
+                                        "name": "Campo de archivo",
+                                        "system_name": "textfile"
+                                    }
+                                },
+                                {
+                                    "id": 602,
+                                    "content_id": 60,
+                                    "value": "5a565422d918f",
+                                    "content_model_field_has_content_model_id": 602,
+                                    "created_at": "2018-01-10 11:57:54",
+                                    "updated_at": "2018-01-10 11:57:54",
+                                    "content_model_field_id": 602,
+                                    "content_model_id": 61,
+                                    "order": 3,
+                                    "show_in_list": 1,
+                                    "name": "Ms. Jacky Labadie",
+                                    "system_name": "ms-jacky-labadie",
+                                    "description": null,
+                                    "field_type_id": 130,
+                                    "type": {
+                                        "id": 602,
+                                        "field_type_id": 130,
+                                        "name": "Dina Hand",
+                                        "system_name": "dina-hand"
+                                    }
+                                },
+                                {
+                                    "id": 606,
+                                    "content_id": 60,
+                                    "value": "5a565422d951e",
+                                    "content_model_field_has_content_model_id": 606,
+                                    "created_at": "2018-01-10 11:57:54",
+                                    "updated_at": "2018-01-10 11:57:54",
+                                    "content_model_field_id": 606,
+                                    "content_model_id": 61,
+                                    "order": 8,
+                                    "show_in_list": 1,
+                                    "name": "Tristin Reichel",
+                                    "system_name": "tristin-reichel",
+                                    "description": null,
+                                    "field_type_id": 1,
+                                    "type": {
+                                        "id": 606,
+                                        "field_type_id": 1,
+                                        "name": "Campo de texto",
+                                        "system_name": "textfield"
+                                    }
+                                },
+                                {
+                                    "id": 608,
+                                    "content_id": 60,
+                                    "value": "5a565422da53e",
+                                    "content_model_field_has_content_model_id": 608,
+                                    "created_at": "2018-01-10 11:57:54",
+                                    "updated_at": "2018-01-10 11:57:54",
+                                    "content_model_field_id": 608,
+                                    "content_model_id": 61,
+                                    "order": 8,
+                                    "show_in_list": 1,
+                                    "name": "Angela Effertz I",
+                                    "system_name": "angela-effertz-i",
+                                    "description": null,
+                                    "field_type_id": 8,
+                                    "type": {
+                                        "id": 608,
+                                        "field_type_id": 8,
+                                        "name": "Campo numérico",
+                                        "system_name": "numberfield"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "status": {
+                    "code": "+A43.0",
+                    "message": "Get all content by content model system name"
+                }
+            }
+
+
 
 ### Get by ID [GET /api/v1/content/{id}]
 
