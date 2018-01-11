@@ -753,6 +753,340 @@ Would it be something on our side then?
                     "message": "Get all models"
                 }
             }
+            
+### Get by system name [GET /api/v1/contentModel/{systemName}]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "data": {
+                "id": 1057,
+                "system_user_id": 1,
+                "name": "Mr. Orlando Hoeger",
+                "system_name": "mr-orlando-hoeger",
+                "description": "Aut modi rerum.",
+                "order": 6,
+                "created_at": "2018-01-11 17:25:13",
+                "updated_at": "2018-01-11 17:25:13",
+                "fields": [
+                    {
+                        "id": 5405,
+                        "content_model_id": 1057,
+                        "content_model_field_id": 5436,
+                        "field_type_id": 3,
+                        "content_model_field_metadata_id": null,
+                        "order": 8,
+                        "show_in_list": 1,
+                        "name": "Dr. Remington Rau",
+                        "system_name": "dr-remington-rau",
+                        "description": null,
+                        "field_type_name": "Campo de fecha",
+                        "field_type_system": "datefield",
+                        "field_type_description": "Campo de fecha",
+                        "value": null
+                    },
+                    {
+                        "id": 5406,
+                        "content_model_id": 1057,
+                        "content_model_field_id": 5437,
+                        "field_type_id": 4,
+                        "content_model_field_metadata_id": null,
+                        "order": 8,
+                        "show_in_list": 0,
+                        "name": "Edmond Christiansen",
+                        "system_name": "edmond-christiansen",
+                        "description": null,
+                        "field_type_name": "Campo de texto largo",
+                        "field_type_system": "textarea",
+                        "field_type_description": "Campo de texto largo",
+                        "value": null
+                    },
+                    {
+                        "id": 5404,
+                        "content_model_id": 1057,
+                        "content_model_field_id": 5435,
+                        "field_type_id": 2,
+                        "content_model_field_metadata_id": null,
+                        "order": 9,
+                        "show_in_list": 0,
+                        "name": "Dominic Brakus",
+                        "system_name": "dominic-brakus",
+                        "description": null,
+                        "field_type_name": "Campo de correo electrónico",
+                        "field_type_system": "emailfield",
+                        "field_type_description": "Campo de correo electrónico",
+                        "value": null
+                    }
+                ],
+                "fieldsTypes": [
+                    {
+                        "id": 2,
+                        "name": "Campo de correo electrónico",
+                        "system_name": "emailfield",
+                        "description": "Campo de correo electrónico",
+                        "created_at": "2018-01-09 22:29:50",
+                        "updated_at": "2018-01-09 22:29:50",
+                        "metadata": [
+                            {
+                                "id": 13,
+                                "field_type_id": 2,
+                                "field_metadata_id": 1,
+                                "system_name": "id"
+                            },
+                            {
+                                "id": 14,
+                                "field_type_id": 2,
+                                "field_metadata_id": 2,
+                                "system_name": "name"
+                            },
+                            {
+                                "id": 17,
+                                "field_type_id": 2,
+                                "field_metadata_id": 3,
+                                "system_name": "value"
+                            },
+                            {
+                                "id": 20,
+                                "field_type_id": 2,
+                                "field_metadata_id": 5,
+                                "system_name": "type"
+                            },
+                            {
+                                "id": 19,
+                                "field_type_id": 2,
+                                "field_metadata_id": 6,
+                                "system_name": "size"
+                            },
+                            {
+                                "id": 22,
+                                "field_type_id": 2,
+                                "field_metadata_id": 7,
+                                "system_name": "placeholder"
+                            },
+                            {
+                                "id": 24,
+                                "field_type_id": 2,
+                                "field_metadata_id": 11,
+                                "system_name": "maxlength"
+                            },
+                            {
+                                "id": 23,
+                                "field_type_id": 2,
+                                "field_metadata_id": 12,
+                                "system_name": "minlength"
+                            },
+                            {
+                                "id": 18,
+                                "field_type_id": 2,
+                                "field_metadata_id": 19,
+                                "system_name": "tabindex"
+                            },
+                            {
+                                "id": 15,
+                                "field_type_id": 2,
+                                "field_metadata_id": 22,
+                                "system_name": "class"
+                            },
+                            {
+                                "id": 16,
+                                "field_type_id": 2,
+                                "field_metadata_id": 23,
+                                "system_name": "style"
+                            },
+                            {
+                                "id": 21,
+                                "field_type_id": 2,
+                                "field_metadata_id": 25,
+                                "system_name": "disabled"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Campo de fecha",
+                        "system_name": "datefield",
+                        "description": "Campo de fecha",
+                        "created_at": "2018-01-09 22:29:51",
+                        "updated_at": "2018-01-09 22:29:51",
+                        "metadata": [
+                            {
+                                "id": 25,
+                                "field_type_id": 3,
+                                "field_metadata_id": 1,
+                                "system_name": "id"
+                            },
+                            {
+                                "id": 26,
+                                "field_type_id": 3,
+                                "field_metadata_id": 2,
+                                "system_name": "name"
+                            },
+                            {
+                                "id": 29,
+                                "field_type_id": 3,
+                                "field_metadata_id": 3,
+                                "system_name": "value"
+                            },
+                            {
+                                "id": 32,
+                                "field_type_id": 3,
+                                "field_metadata_id": 5,
+                                "system_name": "type"
+                            },
+                            {
+                                "id": 31,
+                                "field_type_id": 3,
+                                "field_metadata_id": 6,
+                                "system_name": "size"
+                            },
+                            {
+                                "id": 34,
+                                "field_type_id": 3,
+                                "field_metadata_id": 7,
+                                "system_name": "placeholder"
+                            },
+                            {
+                                "id": 36,
+                                "field_type_id": 3,
+                                "field_metadata_id": 11,
+                                "system_name": "maxlength"
+                            },
+                            {
+                                "id": 35,
+                                "field_type_id": 3,
+                                "field_metadata_id": 12,
+                                "system_name": "minlength"
+                            },
+                            {
+                                "id": 30,
+                                "field_type_id": 3,
+                                "field_metadata_id": 19,
+                                "system_name": "tabindex"
+                            },
+                            {
+                                "id": 27,
+                                "field_type_id": 3,
+                                "field_metadata_id": 22,
+                                "system_name": "class"
+                            },
+                            {
+                                "id": 28,
+                                "field_type_id": 3,
+                                "field_metadata_id": 23,
+                                "system_name": "style"
+                            },
+                            {
+                                "id": 33,
+                                "field_type_id": 3,
+                                "field_metadata_id": 25,
+                                "system_name": "disabled"
+                                }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "name": "Campo de texto largo",
+                        "system_name": "textarea",
+                        "description": "Campo de texto largo",
+                        "created_at": "2018-01-09 22:29:52",
+                        "updated_at": "2018-01-09 22:29:52",
+                        "metadata": [
+                                {
+                                    "id": 37,
+                                    "field_type_id": 4,
+                                    "field_metadata_id": 1,
+                                    "system_name": "id"
+                                },
+                                {
+                                    "id": 38,
+                                    "field_type_id": 4,
+                                    "field_metadata_id": 2,
+                                    "system_name": "name"
+                                },
+                                {
+                                    "id": 41,
+                                    "field_type_id": 4,
+                                    "field_metadata_id": 3,
+                                    "system_name": "value"
+                                },
+                                {
+                                    "id": 44,
+                                    "field_type_id": 4,
+                                    "field_metadata_id": 5,
+                                    "system_name": "type"
+                                },
+                                {
+                                    "id": 43,
+                                    "field_type_id": 4,
+                                    "field_metadata_id": 6,
+                                    "system_name": "size"
+                                },
+                                {
+                                    "id": 46,
+                                    "field_type_id": 4,
+                                    "field_metadata_id": 7,
+                                    "system_name": "placeholder"
+                                },
+                                {
+                                    "id": 48,
+                                    "field_type_id": 4,
+                                    "field_metadata_id": 11,
+                                    "system_name": "maxlength"
+                                },
+                                {
+                                    "id": 47,
+                                    "field_type_id": 4,
+                                    "field_metadata_id": 12,
+                                    "system_name": "minlength"
+                                },
+                                {
+                                    "id": 42,
+                                    "field_type_id": 4,
+                                    "field_metadata_id": 19,
+                                    "system_name": "tabindex"
+                                },
+                                {
+                                    "id": 39,
+                                    "field_type_id": 4,
+                                    "field_metadata_id": 22,
+                                    "system_name": "class"
+                                },
+                                {
+                                    "id": 40,
+                                    "field_type_id": 4,
+                                    "field_metadata_id": 23,
+                                    "system_name": "style"
+                                },
+                                {
+                                    "id": 45,
+                                    "field_type_id": 4,
+                                    "field_metadata_id": 25,
+                                    "system_name": "disabled"
+                                },
+                                {
+                                    "id": 49,
+                                    "field_type_id": 4,
+                                    "field_metadata_id": 26,
+                                    "system_name": "rows"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "status": {
+                    "code": "+A15.0",
+                    "message": "Get content model by system name"
+                }
+            }
 
 ### Get by ID [GET /api/v1/contentModel/{id}]
 
@@ -975,6 +1309,46 @@ Would it be something on our side then?
                         {
                             "system_name": "longitud",
                             "value": "10"
+                        },
+                        {
+                            "system_name": "maxlength",
+                            "value": "10"
+                        },
+                        {
+                            "system_name": "minlength",
+                            "value": "10"
+                        },
+                        {
+                            "system_name": "name",
+                            "value": "10"
+                        },
+                        {
+                            "system_name": "placeholder",
+                            "value": "10"
+                        },
+                        {
+                            "system_name": "size",
+                            "value": "10"
+                        },
+                        {
+                            "system_name": "style",
+                            "value": "10"
+                        },
+                        {
+                            "system_name": "tabindex",
+                            "value": "10"
+                        },
+                        {
+                            "system_name": "ubicacion",
+                            "value": "2"
+                        },
+                        {
+                            "system_name": "multiple",
+                            "value": "1"
+                        },
+                        {
+                            "system_name": "entity_id",
+                            "value": "1"
                         }
                     ]
                 },
@@ -2352,7 +2726,7 @@ Would it be something on our side then?
                     "total": 1,
                     "records": [
                         {
-                            "id": 60,
+                            "id": 1,
                             "system_user_id": 1,
                             "content_model_id": 61,
                             "created_at": "2018-01-10 11:57:54",
@@ -2371,7 +2745,7 @@ Would it be something on our side then?
                                     "content_model_id": 61,
                                     "order": 2,
                                     "show_in_list": 1,
-                                    "name": "Prof. Zion Streich",
+                                    "name": "Número de factura",
                                     "system_name": "prof-zion-streich",
                                     "description": null,
                                     "field_type_id": 5,
@@ -2385,7 +2759,7 @@ Would it be something on our side then?
                                 {
                                     "id": 605,
                                     "content_id": 60,
-                                    "value": "5a565422d9474",
+                                    "value": "gsgssgs6d5g45g4sg65sdg65ss6g",
                                     "content_model_field_has_content_model_id": 605,
                                     "created_at": "2018-01-10 11:57:54",
                                     "updated_at": "2018-01-10 11:57:54",
@@ -2393,7 +2767,7 @@ Would it be something on our side then?
                                     "content_model_id": 61,
                                     "order": 2,
                                     "show_in_list": 1,
-                                    "name": "Mrs. Aracely Brekke",
+                                    "name": "UUID",
                                     "system_name": "mrs-aracely-brekke",
                                     "description": null,
                                     "field_type_id": 5,
@@ -2407,7 +2781,7 @@ Would it be something on our side then?
                                 {
                                     "id": 602,
                                     "content_id": 60,
-                                    "value": "5a565422d918f",
+                                    "value": "2018/01/08",
                                     "content_model_field_has_content_model_id": 602,
                                     "created_at": "2018-01-10 11:57:54",
                                     "updated_at": "2018-01-10 11:57:54",
@@ -2415,7 +2789,7 @@ Would it be something on our side then?
                                     "content_model_id": 61,
                                     "order": 3,
                                     "show_in_list": 1,
-                                    "name": "Ms. Jacky Labadie",
+                                    "name": "Fecha",
                                     "system_name": "ms-jacky-labadie",
                                     "description": null,
                                     "field_type_id": 130,
@@ -2429,7 +2803,7 @@ Would it be something on our side then?
                                 {
                                     "id": 606,
                                     "content_id": 60,
-                                    "value": "5a565422d951e",
+                                    "value": "500.00",
                                     "content_model_field_has_content_model_id": 606,
                                     "created_at": "2018-01-10 11:57:54",
                                     "updated_at": "2018-01-10 11:57:54",
@@ -2437,7 +2811,7 @@ Would it be something on our side then?
                                     "content_model_id": 61,
                                     "order": 8,
                                     "show_in_list": 1,
-                                    "name": "Tristin Reichel",
+                                    "name": "Monto",
                                     "system_name": "tristin-reichel",
                                     "description": null,
                                     "field_type_id": 1,
@@ -2451,7 +2825,7 @@ Would it be something on our side then?
                                 {
                                     "id": 608,
                                     "content_id": 60,
-                                    "value": "5a565422da53e",
+                                    "value": "Abargon",
                                     "content_model_field_has_content_model_id": 608,
                                     "created_at": "2018-01-10 11:57:54",
                                     "updated_at": "2018-01-10 11:57:54",
@@ -2459,7 +2833,7 @@ Would it be something on our side then?
                                     "content_model_id": 61,
                                     "order": 8,
                                     "show_in_list": 1,
-                                    "name": "Angela Effertz I",
+                                    "name": "Cliente",
                                     "system_name": "angela-effertz-i",
                                     "description": null,
                                     "field_type_id": 8,
@@ -2561,7 +2935,7 @@ Would it be something on our side then?
                 }
             }
 
-### Delete [DELETE /api/v1/conten/{id}]
+### Delete [DELETE /api/v1/content/{id}]
 
 + Request (application/json)
 
@@ -2574,10 +2948,11 @@ Would it be something on our side then?
     + Body
     
             {
-               "status": {
+                "success": true,
+                "benchmark": "2.39MB",
+                "status": {
                     "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
+                    "message": "Raw Message"
                 }
             }
 
