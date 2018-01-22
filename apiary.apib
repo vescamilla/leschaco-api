@@ -277,6 +277,11 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
             "id":1,
             "username": "Username",
             "password": "test$Pass",
+            "active": 1,
+            "email_token": null,
+            "verified": 1,
+            "isGod": 1,
+            "remember_token": null,
             "detail": { "name": "Test name","lastname": "Test lastname","phone": "5545678912","email": "test@test.com"},
             "roles": [1,2,3],
             "published_at": "2015-08-05T08:40:51.620Z",
@@ -297,38 +302,37 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
     
             client_id : "browserapp"
             client_secret : 123456
-            token :  "nlkjhhj5g345ghj435hjv5b3vgh5v3543f5ghjghgh3f5&BB$%G$"
+            Authorization :  "Bearer token"
             
     + Body
             
 + Response 200 (application/json)
 
         {
-            "users":[
-                {
-                    "id": 1,
-                    "username": "Username","password": "test$Pass",
-                    "detail": {"name": "Test name","lastname": "Test lastname","phone": "5545678912","email": "test@test.com"},
-                    "roles": [{ "id":1, "name": "Administrador"},{ "id":2, "name": "Editor"}],
-                    "published_at": "2015-08-05T08:40:51.620Z",
-                    "status": 1,
-                    "deleted": 0
-                },
-                {
-                    "id": 2,
-                    "username": "Username","password": "test$Pass",
-                    "detail": {"name": "Test name 2","lastname": "Test lastname 2","phone": "5545678912","email": "test2@test.com"},
-                    "roles": [{ "id":2, "name": "Editor"}],
-                    "published_at": "2015-08-05T08:40:51.620Z",
-                    "status": 0,
-                    "deleted": 0
-                }
-            ],
+            "success": true,
+            "benchmark": "2.79MB",
+            "data": {
+                "total": 1,
+                "records": [
+                    {
+                        "id": 1,
+                        "name": "lheredia",
+                        "email": "lheredia@abargon.com",
+                        "password": "$2y$10$KDp73dqFlJWond0xSr1XC.IG5YMN9x/wy/sIwjHHTZFM4hbKHK4GG",
+                        "active": 1,
+                        "email_token": null,
+                        "verified": 1,
+                        "isGod": 1,
+                        "remember_token": null,
+                        "created_at": "2018-01-18 13:36:04",
+                        "updated_at": "2018-01-18 13:36:04"
+                    }
+                ]
+            },
             "status": {
-                    "code": "+A1.0",
-                    "message": "Raw Message",
-                    "success": true
-                }
+                "code": "+A9.0",
+                "message": "Get all roles"
+            }
         }
         
 ### Update [PUT /api/v1/users]
@@ -553,7 +557,6 @@ Would it be something on our side then?
             {
                 "name": "Test user name",
                 "description":"description",
-Would it be something on our side then?
                 "permissions": [
                     {
                         "content_type": 1,
