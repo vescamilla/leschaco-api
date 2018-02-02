@@ -2720,3 +2720,42 @@ Obtiene el menu principal de la sección de contenidos, para lo cual se deben ob
                     "message": "Get dashboard data"
                 }
             }
+            
+### Facturas [POST /api/v1/custom/facturas]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: "Bearer token"
+            
+    + Body
+    
+            {
+                "uuid": "f9ab44d6-2c61-33d9-a4a0-bed0eadc27a6",
+                "total": 9230.04,
+                "fecha": "1974-05-06",
+                "hora": "03:20:29",
+                "folio": 2,
+                "serie": "C",
+                "cfdiVersion": "3.3",
+                "rfcEmisor": "eiwq583405r59",
+                "rfcReceptor": "oizc434486n33",
+                "razonSocial": "Zboncak PLC",
+                "numeroCliente": 2,
+                "fechaTimbrado": "2016-03-26",
+                "horaTimbrado": "09:18:47",
+                "uuidRelacionado": "20d4df91-6ba6-339c-b983-e8a27007b2b4",
+                "referencia": "sint",
+                "fechaEntregaFisica": "2014-07-24",
+                "horaEntregaFisica": "01:49:30",
+                "coordenadasGpsEntregaFisica": "43.543783,98.566374",
+                "fechaCargaPortal": "1976-03-06",
+                "departamento": "Vending Machine Servicer"
+            }
+            
++ Response 200 (application/json)
+
+    + Body
+    
+            {"success":true,"benchmark":"3.83MB","data":{"id":22,"system_user_id":1,"content_model_id":3,"active":1,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","idBinnacle":34,"values":[{"id":186,"content_id":22,"value":null,"content_model_field_has_content_model_id":5,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-customer","field_name":"Cliente"},{"id":184,"content_id":22,"value":"2","content_model_field_has_content_model_id":6,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-status","field_name":"Estatus"},{"id":185,"content_id":22,"value":"f9ab44d6-2c61-33d9-a4a0-bed0eadc27a6","content_model_field_has_content_model_id":7,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-uuid","field_name":"Folio fiscal / UUID"},{"id":187,"content_id":22,"value":"20d4df91-6ba6-339c-b983-e8a27007b2b4","content_model_field_has_content_model_id":8,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-uuid-relation","field_name":"UUID relacionado"},{"id":188,"content_id":22,"value":"9230.04","content_model_field_has_content_model_id":9,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-total","field_name":"Total de factura"},{"id":189,"content_id":22,"value":"1974-05-06","content_model_field_has_content_model_id":10,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-date","field_name":"Fecha de factura"},{"id":190,"content_id":22,"value":"03:20:29","content_model_field_has_content_model_id":11,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-time","field_name":"Hora de factura"},{"id":191,"content_id":22,"value":"2","content_model_field_has_content_model_id":12,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-folio","field_name":"Folio"},{"id":192,"content_id":22,"value":"C","content_model_field_has_content_model_id":13,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-serie","field_name":"Serie"},{"id":193,"content_id":22,"value":"3.3","content_model_field_has_content_model_id":14,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-cfdi-version","field_name":"Versión CFDI"},{"id":194,"content_id":22,"value":"eiwq583405r59","content_model_field_has_content_model_id":15,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-rfc-transmitter","field_name":"RFC emisor"},{"id":195,"content_id":22,"value":"oizc434486n33","content_model_field_has_content_model_id":16,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-rfc-receiver","field_name":"RFC receptor"},{"id":196,"content_id":22,"value":"Zboncak PLC","content_model_field_has_content_model_id":17,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-business-name","field_name":"Razón social"},{"id":197,"content_id":22,"value":"2","content_model_field_has_content_model_id":18,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-client-number-leschaco","field_name":"No. cliente Leschaco"},{"id":198,"content_id":22,"value":"2016-03-26","content_model_field_has_content_model_id":19,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-stamped-date","field_name":"Fecha timbrado"},{"id":199,"content_id":22,"value":"09:18:47","content_model_field_has_content_model_id":20,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-stamped-time","field_name":"Hora timbrado"},{"id":200,"content_id":22,"value":"sint","content_model_field_has_content_model_id":21,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-reference-leschaco","field_name":"Referencia Leschaco"},{"id":201,"content_id":22,"value":"2014-07-24","content_model_field_has_content_model_id":22,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-physical-deliery-date","field_name":"Fecha de entrega fisica"},{"id":202,"content_id":22,"value":"01:49:30","content_model_field_has_content_model_id":23,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-physical-deliery-time","field_name":"Hora de entrega fisica"},{"id":203,"content_id":22,"value":"43.543783,98.566374","content_model_field_has_content_model_id":24,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-gps-coordinates","field_name":"Coordenadas GPS de entrega fisica"},{"id":204,"content_id":22,"value":null,"content_model_field_has_content_model_id":25,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-payment-date-invoice","field_name":"Fecha de programación a pago de la factura"},{"id":205,"content_id":22,"value":"1976-03-06","content_model_field_has_content_model_id":26,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-upload-data-customer-portal","field_name":"Fecha de carga en portal del cliente"},{"id":206,"content_id":22,"value":null,"content_model_field_has_content_model_id":27,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-folio-accuse","field_name":"Folio acuse"},{"id":207,"content_id":22,"value":"Vending Machine Servicer","content_model_field_has_content_model_id":28,"created_at":"2018-02-02 10:37:26","updated_at":"2018-02-02 10:37:26","field_system_name":"invoice-department","field_name":"Departamento"}]},"status":{"code":"+A49.0","message":"Factura creada"}}
